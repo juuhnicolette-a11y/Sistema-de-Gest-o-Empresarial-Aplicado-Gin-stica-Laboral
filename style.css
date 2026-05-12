@@ -6,6 +6,12 @@
 }
 
 body{
+    background:#f4f7fb;
+}
+
+/* LOGIN */
+
+.login-page{
     background:linear-gradient(to bottom right,#eaf7f7,#d9f1f0);
     height:100vh;
     display:flex;
@@ -50,68 +56,4 @@ body{
 }
 
 .logo-area p{
-    color:#555;
-    line-height:1.5;
-}
-
-.login-form label{
-    display:block;
-    margin-bottom:8px;
-    margin-top:20px;
-    color:#0d5c91;
-    font-weight:bold;
-}
-
-.input-group{
-    display:flex;
-    align-items:center;
-    border:1px solid #ddd;
-    border-radius:12px;
-    padding:12px;
-    margin-bottom:10px;
-}
-
-.input-group i{
-    color:#0d5c91;
-    margin-right:10px;
-}
-
-.input-group input{
-    border:none;
-    outline:none;
-    width:100%;
-    font-size:16px;
-}
-
-button{
-    width:100%;
-    padding:15px;
-    border:none;
-    border-radius:12px;
-    background:#0d5c91;
-    color:white;
-    font-size:18px;
-    margin-top:25px;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-button:hover{
-    background:#19b394;
-}
-
-.support-button{
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    background:#19b394;
-    color:white;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    position:absolute;
-    bottom:-20px;
-    right:-20px;
-    font-size:28px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
