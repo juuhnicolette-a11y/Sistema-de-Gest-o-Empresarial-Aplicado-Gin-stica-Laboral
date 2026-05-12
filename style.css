@@ -56,4 +56,21 @@ body{
 }
 
 .logo-area p{
+    color:#555;
+    line-height:1.5;
+}
+
+.login-form label{
+    display:block;
+    margin-bottom:8px;
+    margin-top:20px;
+    color:#0d5c91;
+    font-weight:bold;
+}
+
+.input-group{
+    display:flex;
+    align-items:center;
+    border:1px solid #ddd;
+    border-radius:12px;
 }
