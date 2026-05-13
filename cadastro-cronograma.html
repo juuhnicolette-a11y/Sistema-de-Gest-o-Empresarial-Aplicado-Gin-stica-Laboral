@@ -1,70 +1,91 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro Cronograma | VitaLab</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Novo Cronograma | VitaLab</title>
 
-    <link rel="stylesheet" href="style.css">
-
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body class="system-page">
 
-    <div class="sidebar">
-
+<div class="sidebar">
+    <div class="sidebar-logo">
+        <i class="fa-solid fa-person-running"></i>
         <h2>VitaLab</h2>
+    </div>
 
-        <ul>
-            <li><i class="fa-solid fa-users"></i> Cadastros</li>
-            <li><i class="fa-solid fa-calendar-check"></i> Planejamento</li>
-            <li><i class="fa-solid fa-money-bill-wave"></i> Financeiro</li>
-            <li><i class="fa-solid fa-chart-column"></i> Relatórios</li>
-        </ul>
+    <ul class="sidebar-menu">
+        <li><a href="dashboard.html"><i class="fa-solid fa-house"></i>Dashboard</a></li>
+        <li><a href="cadastros.html"><i class="fa-solid fa-users"></i>Cadastros</a></li>
+        <li><a href="planejamento.html"><i class="fa-solid fa-calendar-check"></i>Planejamento</a></li>
+        <li><a href="financeiro.html"><i class="fa-solid fa-wallet"></i>Financeiro</a></li>
+        <li><a href="relatorios.html"><i class="fa-solid fa-chart-column"></i>Relatórios</a></li>
+    </ul>
+</div>
+
+<div class="content-area">
+
+    <div class="topbar">
+        <h1>Novo Cronograma</h1>
+        <p>Monte um cronograma de aulas vinculando exercícios, empresa, professor e insumos.</p>
+    </div>
+
+    <div class="form-card">
+
+        <div class="table-header">
+            <h2>Dados do Cronograma</h2>
+        </div>
+
+        <div class="form-grid">
+
+            <div>
+                <label>Dados Empresa</label>
+                <select>
+                    <option>Selecione a empresa</option>
+                    <option>Empresa Saúde Ativa</option>
+                    <option>Vita Corporate</option>
+                    <option>Bem Estar Tech</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Professor Responsável</label>
+                <select>
+                    <option>Selecione o professor</option>
+                    <option>João Silva</option>
+                    <option>Maria Souza</option>
+                    <option>Carlos Mendes</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Lista de Exercícios / Dia</label>
+                <textarea placeholder="Ex: Segunda-feira: Alongamento cervical, rotação de ombros e flexão de punhos."></textarea>
+            </div>
+
+            <div>
+                <label>Insumos Necessários</label>
+                <textarea placeholder="Ex: Colchonetes, faixas elásticas, halteres leves."></textarea>
+            </div>
+
+        </div>
+
+        <div class="action-buttons">
+            <a href="cronogramas.html">
+                <button type="button" class="secondary-button">Cancelar</button>
+            </a>
+
+            <a href="cronogramas.html">
+                <button type="button" class="secondary-button">Salvar Cronograma</button>
+            </a>
+        </div>
 
     </div>
 
-    <div class="content-area">
-
-        <div class="top-bar">
-            <h1>Cadastro Cronograma</h1>
-        </div>
-
-        <div class="info-card">
-
-            <div class="form-grid">
-
-                <div>
-                    <label>Lista Exercícios / Dia</label>
-                    <textarea></textarea>
-                </div>
-
-                <div>
-                    <label>Dados Empresa</label>
-                    <input type="text">
-                </div>
-
-                <div>
-                    <label>Professor Responsável</label>
-                    <input type="text">
-                </div>
-
-                <div>
-                    <label>Insumos Necessários</label>
-                    <textarea></textarea>
-                </div>
-
-            </div>
-
-            <div class="button-group">
-                <button>Salvar Cronograma</button>
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 </body>
 </html>
