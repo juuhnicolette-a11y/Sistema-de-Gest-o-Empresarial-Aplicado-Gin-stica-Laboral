@@ -1,74 +1,109 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercícios | VitaLab</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercícios | VitaLab</title>
 
-    <link rel="stylesheet" href="style.css">
-
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body class="system-page">
 
-    <div class="sidebar">
-
+<div class="sidebar">
+    <div class="sidebar-logo">
+        <i class="fa-solid fa-person-running"></i>
         <h2>VitaLab</h2>
-
-        <ul>
-            <li><i class="fa-solid fa-users"></i> Cadastros</li>
-            <li><i class="fa-solid fa-calendar-check"></i> Planejamento</li>
-            <li><i class="fa-solid fa-money-bill-wave"></i> Financeiro</li>
-            <li><i class="fa-solid fa-chart-column"></i> Relatórios</li>
-        </ul>
-
     </div>
 
-    <div class="content-area">
+    <ul class="sidebar-menu">
+        <li><a href="dashboard.html"><i class="fa-solid fa-house"></i>Dashboard</a></li>
+        <li><a href="cadastros.html"><i class="fa-solid fa-users"></i>Cadastros</a></li>
+        <li><a href="planejamento.html"><i class="fa-solid fa-calendar-check"></i>Planejamento</a></li>
+        <li><a href="financeiro.html"><i class="fa-solid fa-wallet"></i>Financeiro</a></li>
+        <li><a href="relatorios.html"><i class="fa-solid fa-chart-column"></i>Relatórios</a></li>
+    </ul>
+</div>
 
-        <div class="top-bar">
-            <h1>Exercícios</h1>
-        </div>
+<div class="content-area">
 
-        <table>
+    <div class="topbar">
+        <h1>Exercícios</h1>
+        <p>Consulte e gerencie os exercícios cadastrados para as aulas.</p>
+    </div>
 
-            <thead>
-                <tr>
-                    <th>Nome Exercício</th>
-                    <th>Repetições</th>
-                    <th>Tempo</th>
-                </tr>
-            </thead>
+    <div class="table-card">
 
-            <tbody>
-
-                <tr>
-                    <td>Alongamento Cervical</td>
-                    <td>10</td>
-                    <td>30 segundos</td>
-                </tr>
-
-                <tr>
-                    <td>Rotação Ombros</td>
-                    <td>15</td>
-                    <td>45 segundos</td>
-                </tr>
-
-            </tbody>
-
-        </table>
-
-        <div class="button-group">
+        <div class="table-header">
+            <h2>Lista de Exercícios</h2>
 
             <a href="cadastro-exercicio.html">
-                <button>Novo Exercício</button>
+                <button class="secondary-button">Novo Exercício</button>
             </a>
+        </div>
 
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome do Exercício</th>
+                        <th>Repetições</th>
+                        <th>Tempo</th>
+                        <th>Adaptações</th>
+                        <th>Acessar</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Alongamento Cervical</td>
+                        <td>10</td>
+                        <td>30 segundos</td>
+                        <td>Para cervicalgia</td>
+                        <td>
+                            <a href="cadastro-exercicio.html" class="record-link">
+                                Ver <i class="fa-solid fa-chevron-right"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Rotação de Ombros</td>
+                        <td>15</td>
+                        <td>45 segundos</td>
+                        <td>Sem adaptação</td>
+                        <td>
+                            <a href="cadastro-exercicio.html" class="record-link">
+                                Ver <i class="fa-solid fa-chevron-right"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Flexão de Punhos</td>
+                        <td>12</td>
+                        <td>30 segundos</td>
+                        <td>Com apoio</td>
+                        <td>
+                            <a href="cadastro-exercicio.html" class="record-link">
+                                Ver <i class="fa-solid fa-chevron-right"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="action-buttons">
+            <a href="planejamento.html">
+                <button class="secondary-button">Voltar</button>
+            </a>
         </div>
 
     </div>
+
+</div>
 
 </body>
 </html>
