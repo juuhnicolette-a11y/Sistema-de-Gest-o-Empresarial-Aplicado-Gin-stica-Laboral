@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contas a Pagar | VitaLab</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body class="system-page">
+
+<div class="sidebar">
+    <div class="sidebar-logo"><i class="fa-solid fa-person-running"></i><h2>VitaLab</h2></div>
+    <ul class="sidebar-menu">
+        <li><a href="dashboard.html"><i class="fa-solid fa-house"></i>Dashboard</a></li>
+        <li><a href="cadastros.html"><i class="fa-solid fa-users"></i>Cadastros</a></li>
+        <li><a href="planejamento.html"><i class="fa-solid fa-calendar-check"></i>Planejamento</a></li>
+        <li><a href="financeiro.html"><i class="fa-solid fa-wallet"></i>Financeiro</a></li>
+        <li><a href="relatorios.html"><i class="fa-solid fa-chart-column"></i>Relatórios</a></li>
+    </ul>
+</div>
+
+<div class="content-area">
+
+    <div class="topbar">
+        <h1>Contas a Pagar</h1>
+        <p>Consulte pagamentos, vencimentos, valores e classificações.</p>
+    </div>
+
+    <div class="table-card">
+
+        <div class="filters-grid">
+            <input type="date" title="Data de vencimento">
+            <select>
+                <option>Classificação</option>
+                <option>Professor</option>
+                <option>Fornecedor</option>
+                <option>Insumos</option>
+                <option>Serviços</option>
+            </select>
+            <input type="text" placeholder="Pessoa/empresa vinculada">
+        </div>
+
+        <div class="table-header">
+            <h2>Lista de Contas a Pagar</h2>
+            <a href="cadastro-conta-pagar.html"><button class="secondary-button">Nova Conta</button></a>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Vencimento</th>
+                        <th>Pessoa/Empresa</th>
+                        <th>Classificação</th>
+                        <th>Valor</th>
+                        <th>Acessar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>10/05/2026</td>
+                        <td>João Silva</td>
+                        <td>Professor</td>
+                        <td>R$ 1.200,00</td>
+                        <td><a href="cadastro-conta-pagar.html" class="record-link">Ver <i class="fa-solid fa-chevron-right"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>15/05/2026</td>
+                        <td>Fornecedor Fit</td>
+                        <td>Insumos</td>
+                        <td>R$ 350,00</td>
+                        <td><a href="cadastro-conta-pagar.html" class="record-link">Ver <i class="fa-solid fa-chevron-right"></i></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pagination">
+            <span class="active-page">1</span>
+            <a href="#">2</a>
+            <a href="#">3</a>
+        </div>
+
+        <div class="action-buttons">
+            <a href="financeiro.html"><button class="secondary-button">Voltar</button></a>
+            <button class="secondary-button" onclick="window.print()">Imprimir</button>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
