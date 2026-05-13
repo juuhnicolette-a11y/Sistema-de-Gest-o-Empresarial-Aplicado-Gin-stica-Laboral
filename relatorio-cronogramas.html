@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relatório de Cronogramas | VitaLab</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body class="system-page">
+
+<div class="sidebar">
+    <div class="sidebar-logo"><i class="fa-solid fa-person-running"></i><h2>VitaLab</h2></div>
+    <ul class="sidebar-menu">
+        <li><a href="dashboard.html"><i class="fa-solid fa-house"></i>Dashboard</a></li>
+        <li><a href="cadastros.html"><i class="fa-solid fa-users"></i>Cadastros</a></li>
+        <li><a href="planejamento.html"><i class="fa-solid fa-calendar-check"></i>Planejamento</a></li>
+        <li><a href="financeiro.html"><i class="fa-solid fa-wallet"></i>Financeiro</a></li>
+        <li><a href="relatorios.html"><i class="fa-solid fa-chart-column"></i>Relatórios</a></li>
+    </ul>
+</div>
+
+<div class="content-area">
+
+    <div class="topbar">
+        <h1>Relatório de Cronogramas</h1>
+        <p>Filtre cronogramas por professor e insumos necessários.</p>
+    </div>
+
+    <div class="table-card">
+
+        <div class="filters-grid">
+            <select>
+                <option>Professor</option>
+                <option>João Silva</option>
+                <option>Maria Souza</option>
+            </select>
+            <input type="text" placeholder="Insumos">
+            <input type="text" placeholder="Empresa">
+        </div>
+
+        <div class="table-header">
+            <h2>Resultado do Relatório</h2>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Empresa</th>
+                        <th>Professor</th>
+                        <th>Exercícios/Dia</th>
+                        <th>Insumos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Empresa Saúde Ativa</td><td>João Silva</td><td>Alongamento cervical</td><td>Colchonetes</td></tr>
+                    <tr><td>Vita Corporate</td><td>Maria Souza</td><td>Rotação de ombros</td><td>Faixas elásticas</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="pagination">
+            <span class="active-page">1</span>
+            <a href="#">2</a>
+        </div>
+
+        <div class="action-buttons">
+            <a href="relatorios.html"><button class="secondary-button">Voltar</button></a>
+            <button class="secondary-button" onclick="window.print()">Imprimir</button>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
