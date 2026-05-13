@@ -1,38 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastros | VitaLab</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cadastros | VitaLab</title>
 
-    <link rel="stylesheet" href="style.css">
-
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body class="system-page">
 
-    <div class="sidebar">
-        <h2>VitaLab</h2>
+<div class="sidebar">
 
-        <ul>
-            <li><i class="fa-solid fa-users"></i> Cadastros</li>
-            <li><i class="fa-solid fa-calendar-check"></i> Planejamento</li>
-            <li><i class="fa-solid fa-money-bill-wave"></i> Financeiro</li>
-            <li><i class="fa-solid fa-chart-column"></i> Relatórios</li>
-        </ul>
+    <div class="sidebar-logo">
+        <i class="fa-solid fa-person-running"></i>
+        <h2>VitaLab</h2>
     </div>
 
-    <div class="content-area">
+    <ul class="sidebar-menu">
+        <li><a href="dashboard.html"><i class="fa-solid fa-house"></i>Dashboard</a></li>
+        <li><a href="cadastros.html"><i class="fa-solid fa-users"></i>Cadastros</a></li>
+        <li><a href="planejamento.html"><i class="fa-solid fa-calendar-check"></i>Planejamento</a></li>
+        <li><a href="financeiro.html"><i class="fa-solid fa-wallet"></i>Financeiro</a></li>
+        <li><a href="relatorios.html"><i class="fa-solid fa-chart-column"></i>Relatórios</a></li>
+    </ul>
 
-        <div class="top-bar">
-            <h1>Cadastros</h1>
-        </div>
+</div>
 
-        <div class="search-area">
+<div class="content-area">
 
-            <input type="text" placeholder="Buscar cadastro...">
+    <div class="topbar">
+        <h1>Cadastros</h1>
+        <p>Consulte, filtre e gerencie os cadastros do sistema.</p>
+    </div>
+
+    <div class="table-card">
+
+        <div class="filters-grid">
+            <input type="text" placeholder="Buscar por nome, e-mail ou telefone...">
 
             <select>
                 <option>Empresas</option>
@@ -43,35 +49,62 @@
                 <option>Ativos</option>
                 <option>Inativos</option>
             </select>
-
         </div>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Tipo</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
+        <div class="table-header" style="margin-top: 30px;">
+            <h2>Lista de Cadastros</h2>
 
-            <tbody>
-                <tr>
-                    <td>Empresa Saúde Ativa</td>
-                    <td>Empresa</td>
-                    <td>Ativo</td>
-                </tr>
+            <a href="visualizacao-cadastro.html">
+                <button class="secondary-button">Acessar Cadastro</button>
+            </a>
+        </div>
 
-                <tr>
-                    <td>João Silva</td>
-                    <td>Professor</td>
-                    <td>Ativo</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Tipo</th>
+                        <th>Status</th>
+                        <th>Acessar</th>
+                    </tr>
+                </thead>
 
-        <div class="button-group">
+                <tbody>
+                    <tr>
+                        <td>Empresa Saúde Ativa</td>
+                        <td>Empresa</td>
+                        <td>Ativo</td>
+                        <td>
+                            <a href="visualizacao-cadastro.html" class="record-link">
+                                Ver <i class="fa-solid fa-chevron-right"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>João Silva</td>
+                        <td>Professor</td>
+                        <td>Ativo</td>
+                        <td>
+                            <a href="visualizacao-cadastro.html" class="record-link">
+                                Ver <i class="fa-solid fa-chevron-right"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="action-buttons">
             <a href="dashboard.html">
                 <button class="secondary-button">Voltar</button>
             </a>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
 </html>
