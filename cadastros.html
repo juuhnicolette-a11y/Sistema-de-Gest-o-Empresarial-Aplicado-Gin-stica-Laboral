@@ -19,11 +19,42 @@
     </div>
 
     <ul class="sidebar-menu">
-        <li><a href="dashboard.html"><i class="fa-solid fa-house"></i>Dashboard</a></li>
-        <li><a href="cadastros.html"><i class="fa-solid fa-users"></i>Cadastros</a></li>
-        <li><a href="planejamento.html"><i class="fa-solid fa-calendar-check"></i>Planejamento</a></li>
-        <li><a href="financeiro.html"><i class="fa-solid fa-wallet"></i>Financeiro</a></li>
-        <li><a href="relatorios.html"><i class="fa-solid fa-chart-column"></i>Relatórios</a></li>
+
+        <li>
+            <a href="dashboard.html">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </a>
+        </li>
+
+        <li>
+            <a href="cadastros.html">
+                <i class="fa-solid fa-users"></i>
+                Cadastros
+            </a>
+        </li>
+
+        <li>
+            <a href="planejamento.html">
+                <i class="fa-solid fa-calendar-check"></i>
+                Planejamento
+            </a>
+        </li>
+
+        <li>
+            <a href="financeiro.html">
+                <i class="fa-solid fa-wallet"></i>
+                Financeiro
+            </a>
+        </li>
+
+        <li>
+            <a href="relatorios.html">
+                <i class="fa-solid fa-chart-column"></i>
+                Relatórios
+            </a>
+        </li>
+
     </ul>
 
 </div>
@@ -32,13 +63,14 @@
 
     <div class="topbar">
         <h1>Cadastros</h1>
-        <p>Consulte, filtre e gerencie os cadastros do sistema.</p>
+        <p>Consulte empresas e professores cadastrados.</p>
     </div>
 
     <div class="table-card">
 
         <div class="filters-grid">
-            <input type="text" placeholder="Buscar por nome, e-mail ou telefone...">
+
+            <input type="text" placeholder="Buscar cadastro...">
 
             <select>
                 <option>Empresas</option>
@@ -49,18 +81,25 @@
                 <option>Ativos</option>
                 <option>Inativos</option>
             </select>
+
         </div>
 
-        <div class="table-header" style="margin-top: 30px;">
+        <div class="table-header">
+
             <h2>Lista de Cadastros</h2>
 
             <a href="visualizacao-cadastro.html">
-                <button class="secondary-button">Acessar Cadastro</button>
+                <button class="secondary-button">
+                    Acessar Cadastro
+                </button>
             </a>
+
         </div>
 
         <div class="table-wrapper">
+
             <table>
+
                 <thead>
                     <tr>
                         <th>Nome</th>
@@ -71,13 +110,16 @@
                 </thead>
 
                 <tbody>
+
                     <tr>
                         <td>Empresa Saúde Ativa</td>
                         <td>Empresa</td>
                         <td>Ativo</td>
+
                         <td>
                             <a href="visualizacao-cadastro.html" class="record-link">
-                                Ver <i class="fa-solid fa-chevron-right"></i>
+                                Ver
+                                <i class="fa-solid fa-chevron-right"></i>
                             </a>
                         </td>
                     </tr>
@@ -86,20 +128,19 @@
                         <td>João Silva</td>
                         <td>Professor</td>
                         <td>Ativo</td>
+
                         <td>
                             <a href="visualizacao-cadastro.html" class="record-link">
-                                Ver <i class="fa-solid fa-chevron-right"></i>
+                                Ver
+                                <i class="fa-solid fa-chevron-right"></i>
                             </a>
                         </td>
                     </tr>
-                </tbody>
-            </table>
-        </div>
 
-        <div class="action-buttons">
-            <a href="dashboard.html">
-                <button class="secondary-button">Voltar</button>
-            </a>
+                </tbody>
+
+            </table>
+
         </div>
 
     </div>
