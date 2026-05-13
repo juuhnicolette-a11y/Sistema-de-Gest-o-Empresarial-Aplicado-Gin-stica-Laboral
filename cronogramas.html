@@ -1,68 +1,105 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cronogramas | VitaLab</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cronogramas | VitaLab</title>
 
-    <link rel="stylesheet" href="style.css">
-
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body class="system-page">
 
-    <div class="sidebar">
-
+<div class="sidebar">
+    <div class="sidebar-logo">
+        <i class="fa-solid fa-person-running"></i>
         <h2>VitaLab</h2>
-
-        <ul>
-            <li><i class="fa-solid fa-users"></i> Cadastros</li>
-            <li><i class="fa-solid fa-calendar-check"></i> Planejamento</li>
-            <li><i class="fa-solid fa-money-bill-wave"></i> Financeiro</li>
-            <li><i class="fa-solid fa-chart-column"></i> Relatórios</li>
-        </ul>
-
     </div>
 
-    <div class="content-area">
+    <ul class="sidebar-menu">
+        <li><a href="dashboard.html"><i class="fa-solid fa-house"></i>Dashboard</a></li>
+        <li><a href="cadastros.html"><i class="fa-solid fa-users"></i>Cadastros</a></li>
+        <li><a href="planejamento.html"><i class="fa-solid fa-calendar-check"></i>Planejamento</a></li>
+        <li><a href="financeiro.html"><i class="fa-solid fa-wallet"></i>Financeiro</a></li>
+        <li><a href="relatorios.html"><i class="fa-solid fa-chart-column"></i>Relatórios</a></li>
+    </ul>
+</div>
 
-        <div class="top-bar">
-            <h1>Cronogramas</h1>
-        </div>
+<div class="content-area">
 
-        <table>
+    <div class="topbar">
+        <h1>Cronogramas</h1>
+        <p>Consulte e gerencie os cronogramas cadastrados.</p>
+    </div>
 
-            <thead>
-                <tr>
-                    <th>Empresa</th>
-                    <th>Professor</th>
-                    <th>Insumos</th>
-                </tr>
-            </thead>
+    <div class="table-card">
 
-            <tbody>
-
-                <tr>
-                    <td>Empresa Saúde Ativa</td>
-                    <td>João Silva</td>
-                    <td>Colchonetes</td>
-                </tr>
-
-            </tbody>
-
-        </table>
-
-        <div class="button-group">
+        <div class="table-header">
+            <h2>Lista de Cronogramas</h2>
 
             <a href="cadastro-cronograma.html">
-                <button>Novo Cronograma</button>
+                <button class="secondary-button">Novo Cronograma</button>
             </a>
+        </div>
 
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Empresa</th>
+                        <th>Professor</th>
+                        <th>Insumos</th>
+                        <th>Acessar</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Empresa Saúde Ativa</td>
+                        <td>João Silva</td>
+                        <td>Colchonetes</td>
+                        <td>
+                            <a href="cadastro-cronograma.html" class="record-link">
+                                Ver <i class="fa-solid fa-chevron-right"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Vita Corporate</td>
+                        <td>Maria Souza</td>
+                        <td>Faixas elásticas</td>
+                        <td>
+                            <a href="cadastro-cronograma.html" class="record-link">
+                                Ver <i class="fa-solid fa-chevron-right"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Bem Estar Tech</td>
+                        <td>João Silva</td>
+                        <td>Halteres leves</td>
+                        <td>
+                            <a href="cadastro-cronograma.html" class="record-link">
+                                Ver <i class="fa-solid fa-chevron-right"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="action-buttons">
+            <a href="planejamento.html">
+                <button class="secondary-button">Voltar</button>
+            </a>
         </div>
 
     </div>
+
+</div>
 
 </body>
 </html>
