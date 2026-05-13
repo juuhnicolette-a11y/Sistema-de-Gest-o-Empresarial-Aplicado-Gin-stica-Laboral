@@ -380,3 +380,25 @@ td{
 .primary-button:hover {
     opacity: 0.9;
 }
+
+.pagination{
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    gap:10px;
+    margin-top:25px;
+}
+
+.pagination span,
+.pagination a{
+    padding:10px 14px;
+    border-radius:10px;
+    background:#f1f6fb;
+    color:#083d77;
+    font-weight:bold;
+}
+
+.pagination .active-page{
+    background:#11c4a7;
+    color:white;
+}
