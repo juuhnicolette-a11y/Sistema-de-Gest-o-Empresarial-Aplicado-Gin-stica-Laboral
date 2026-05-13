@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Editar Conta a Receber | VitaLab</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body class="system-page">
+
+<div class="sidebar">
+    <div class="sidebar-logo"><i class="fa-solid fa-person-running"></i><h2>VitaLab</h2></div>
+    <ul class="sidebar-menu">
+        <li><a href="dashboard.html"><i class="fa-solid fa-house"></i>Dashboard</a></li>
+        <li><a href="cadastros.html"><i class="fa-solid fa-users"></i>Cadastros</a></li>
+        <li><a href="planejamento.html"><i class="fa-solid fa-calendar-check"></i>Planejamento</a></li>
+        <li><a href="financeiro.html"><i class="fa-solid fa-wallet"></i>Financeiro</a></li>
+        <li><a href="relatorios.html"><i class="fa-solid fa-chart-column"></i>Relatórios</a></li>
+    </ul>
+</div>
+
+<div class="content-area">
+
+    <div class="topbar">
+        <h1>Editar Conta a Receber</h1>
+        <p>Atualize os dados da receita selecionada.</p>
+    </div>
+
+    <div class="form-card">
+
+        <div class="table-header">
+            <h2>Dados da Conta</h2>
+        </div>
+
+        <div class="form-grid">
+
+            <div>
+                <label>Data de Recebimento</label>
+                <input type="date" value="2026-05-05">
+            </div>
+
+            <div>
+                <label>Valor</label>
+                <input type="text" value="R$ 2.500,00">
+            </div>
+
+            <div>
+                <label>Cadastro Vinculado</label>
+                <select>
+                    <option>Empresa Saúde Ativa</option>
+                    <option>Vita Corporate</option>
+                    <option>Bem Estar Tech</option>
+                    <option>João Silva</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Classificação</label>
+                <select>
+                    <option>Mensalidade</option>
+                    <option>Contrato</option>
+                    <option>Serviço avulso</option>
+                    <option>Outros</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Status</label>
+                <select>
+                    <option>Recebido</option>
+                    <option>Pendente</option>
+                    <option>Cancelado</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Observações</label>
+                <textarea>Recebimento mensal da empresa contratante.</textarea>
+            </div>
+
+        </div>
+
+        <div class="action-buttons">
+            <a href="contas-receber.html">
+                <button type="button" class="secondary-button">Cancelar</button>
+            </a>
+
+            <a href="contas-receber.html">
+                <button type="button" class="secondary-button">Salvar Alterações</button>
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
