@@ -3,35 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Financeiro</title>
+<title>Financeiro | VitaLab</title>
+
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body class="system-page">
 
-<!-- COLE O MENU PADRÃO AQUI -->
+<div class="sidebar">
+    <div class="sidebar-logo">
+        <i class="fa-solid fa-person-running"></i>
+        <h2>VitaLab</h2>
+    </div>
+
+    <ul class="sidebar-menu">
+        <li><a href="dashboard.html"><i class="fa-solid fa-house"></i>Dashboard</a></li>
+        <li><a href="cadastros.html"><i class="fa-solid fa-users"></i>Cadastros</a></li>
+        <li><a href="planejamento.html"><i class="fa-solid fa-calendar-check"></i>Planejamento</a></li>
+        <li><a href="financeiro.html"><i class="fa-solid fa-wallet"></i>Financeiro</a></li>
+        <li><a href="relatorios.html"><i class="fa-solid fa-chart-column"></i>Relatórios</a></li>
+    </ul>
+</div>
 
 <div class="content-area">
 
-<div class="topbar">
-<h1>Financeiro</h1>
-<p>Gerencie pagamentos e recebimentos.</p>
+    <div class="topbar">
+        <h1>Financeiro</h1>
+        <p>Gerencie contas a pagar e contas a receber.</p>
+    </div>
+
+    <div class="cards-grid">
+
+        <a href="contas-pagar.html" class="dashboard-card">
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+            <h2>Contas a Pagar</h2>
+            <p>Controle vencimentos, valores, classificações e cadastros vinculados.</p>
+        </a>
+
+        <a href="contas-receber.html" class="dashboard-card">
+            <i class="fa-solid fa-money-bill-trend-up"></i>
+            <h2>Contas a Receber</h2>
+            <p>Acompanhe recebimentos, valores, classificações e empresas vinculadas.</p>
+        </a>
+
+    </div>
+
 </div>
 
-<div class="cards-grid">
-
-<a href="contas-pagar.html" class="dashboard-card">
-<i class="fa-solid fa-file-invoice-dollar"></i>
-<h2>Contas a Pagar</h2>
-<p>Controle pagamentos e vencimentos.</p>
-</a>
-
-<a href="contas-receber.html" class="dashboard-card">
-<i class="fa-solid fa-money-bill-trend-up"></i>
-<h2>Contas a Receber</h2>
-<p>Controle recebimentos e empresas.</p>
-</a>
-
-</div>
+</body>
 </html>
