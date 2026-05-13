@@ -3,35 +3,67 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard</title>
+<title>Dashboard | VitaLab</title>
+
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body class="system-page">
 
-<!-- MENU -->
-
 <div class="sidebar">
 
-<div class="sidebar-logo">
-<i class="fa-solid fa-person-running"></i>
-<h2>VitaLab</h2>
-</div>
+    <div class="sidebar-logo">
+        <i class="fa-solid fa-person-running"></i>
+        <h2>VitaLab</h2>
+    </div>
 
-<ul class="sidebar-menu">
-<li><a href="dashboard.html"><i class="fa-solid fa-house"></i>Dashboard</a></li>
-<li><a href="cadastros.html"><i class="fa-solid fa-users"></i>Cadastros</a></li>
-<li><a href="planejamento.html"><i class="fa-solid fa-calendar-check"></i>Planejamento</a></li>
-<li><a href="financeiro.html"><i class="fa-solid fa-wallet"></i>Financeiro</a></li>
-<li><a href="relatorios.html"><i class="fa-solid fa-chart-column"></i>Relatórios</a></li>
-</ul>
+    <ul class="sidebar-menu">
+        <li><a href="dashboard.html"><i class="fa-solid fa-house"></i>Dashboard</a></li>
+        <li><a href="cadastros.html"><i class="fa-solid fa-users"></i>Cadastros</a></li>
+        <li><a href="planejamento.html"><i class="fa-solid fa-calendar-check"></i>Planejamento</a></li>
+        <li><a href="financeiro.html"><i class="fa-solid fa-wallet"></i>Financeiro</a></li>
+        <li><a href="relatorios.html"><i class="fa-solid fa-chart-column"></i>Relatórios</a></li>
+    </ul>
 
 </div>
 
 <div class="content-area">
 
-<div class="topbar">
-<h1>Dashboard</h1>
-<p>Gerencie os módulos do VitaLab.</p>
+    <div class="topbar">
+        <h1>Dashboard</h1>
+        <p>Gerencie os módulos do VitaLab.</p>
+    </div>
+
+    <div class="cards-grid">
+
+        <a href="cadastros.html" class="dashboard-card">
+            <i class="fa-solid fa-users"></i>
+            <h2>Cadastros</h2>
+            <p>Empresas, professores e colaboradores.</p>
+        </a>
+
+        <a href="planejamento.html" class="dashboard-card">
+            <i class="fa-solid fa-calendar-check"></i>
+            <h2>Planejamento</h2>
+            <p>Exercícios e cronogramas.</p>
+        </a>
+
+        <a href="financeiro.html" class="dashboard-card">
+            <i class="fa-solid fa-wallet"></i>
+            <h2>Financeiro</h2>
+            <p>Contas a pagar e receber.</p>
+        </a>
+
+        <a href="relatorios.html" class="dashboard-card">
+            <i class="fa-solid fa-chart-column"></i>
+            <h2>Relatórios</h2>
+            <p>Relatórios completos do sistema.</p>
+        </a>
+
+    </div>
+
+</div>
+
+</body>
 </html>
