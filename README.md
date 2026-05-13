@@ -1,2 +1,101 @@
-# Sistema-de-Gest-o-Empresarial-Aplicado-Gin-stica-Laboral
-A ginástica laboral promove saúde e previne lesões no ambiente corporativo, mas enfrenta desafios como baixa padronização e falta de soluções tecnológicas. Este trabalho propõe um sistema web em Python com Flask, integrado a banco de dados relacional, para centralizar informações e otimizar a gestão de empresas do segmento..
+# VitaLab
+### Sistema de Gestão para Ginástica Laboral
+
+---
+
+## Sobre o Projeto
+
+A ginástica laboral possui papel importante na promoção da saúde e prevenção de lesões no ambiente corporativo. Entretanto, empresas do segmento ainda enfrentam dificuldades relacionadas à organização de informações, planejamento de aulas, controle financeiro e acompanhamento das atividades realizadas.
+
+O VitaLab foi desenvolvido com o objetivo de centralizar e otimizar os processos operacionais de empresas de ginástica laboral, oferecendo uma plataforma web moderna para gerenciamento de cadastros, cronogramas, exercícios, relatórios e controle financeiro.
+
+O projeto foi desenvolvido como uma aplicação web utilizando Python e Flask, integrado a banco de dados relacional e controle de versão com Git e GitHub.
+
+---
+
+## Objetivos do Sistema
+
+- Centralizar informações operacionais
+- Facilitar o gerenciamento de empresas e professores
+- Organizar cronogramas e exercícios
+- Auxiliar no controle financeiro
+- Gerar relatórios gerenciais
+- Melhorar a produtividade e organização da empresa
+
+---
+
+## Funcionalidades
+
+### Login
+- Tela de autenticação do sistema
+- Área de suporte rápido
+
+### Cadastros
+- Cadastro de empresas contratantes
+- Cadastro de professores
+- Consulta e filtros de registros
+- Visualização e edição de informações
+
+### Planejamento de Aulas
+- Cadastro de exercícios
+- Upload de imagens e vídeos
+- Cadastro de cronogramas
+- Organização de exercícios por dia
+
+### Financeiro
+- Contas a pagar
+- Contas a receber
+- Controle de vencimentos
+- Classificação financeira
+
+### Relatórios
+- Relatórios de cadastros
+- Relatórios de cronogramas
+- Relatórios financeiros
+- Filtros personalizados
+- Impressão de relatórios
+
+---
+
+## Tecnologias Utilizadas
+
+- HTML5
+- CSS3
+- Python
+- Flask
+- SQLite
+- Git
+- GitHub
+- Font Awesome
+
+---
+
+## Estrutura do Projeto
+
+```bash
+VitaLab/
+│
+├── index.html
+├── dashboard.html
+├── cadastros.html
+├── visualizacao-cadastro.html
+├── editar-cadastro.html
+│
+├── planejamento.html
+├── exercicios.html
+├── cadastro-exercicio.html
+├── cronogramas.html
+├── cadastro-cronograma.html
+│
+├── financeiro.html
+├── contas-pagar.html
+├── contas-receber.html
+│
+├── relatorios.html
+├── relatorio-cadastros.html
+├── relatorio-cronogramas.html
+├── relatorio-contas-pagar.html
+├── relatorio-contas-receber.html
+│
+├── style.css
+└── README.md
