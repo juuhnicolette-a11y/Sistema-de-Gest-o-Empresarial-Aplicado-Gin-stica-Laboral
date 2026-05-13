@@ -3,35 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Relatórios</title>
+<title>Relatórios | VitaLab</title>
+
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body class="system-page">
 
-<!-- COLE O MENU PADRÃO AQUI -->
+<div class="sidebar">
+    <div class="sidebar-logo">
+        <i class="fa-solid fa-person-running"></i>
+        <h2>VitaLab</h2>
+    </div>
+
+    <ul class="sidebar-menu">
+        <li><a href="dashboard.html"><i class="fa-solid fa-house"></i>Dashboard</a></li>
+        <li><a href="cadastros.html"><i class="fa-solid fa-users"></i>Cadastros</a></li>
+        <li><a href="planejamento.html"><i class="fa-solid fa-calendar-check"></i>Planejamento</a></li>
+        <li><a href="financeiro.html"><i class="fa-solid fa-wallet"></i>Financeiro</a></li>
+        <li><a href="relatorios.html"><i class="fa-solid fa-chart-column"></i>Relatórios</a></li>
+    </ul>
+</div>
 
 <div class="content-area">
 
-<div class="topbar">
-<h1>Relatórios</h1>
-<p>Visualize relatórios completos do sistema.</p>
+    <div class="topbar">
+        <h1>Relatórios</h1>
+        <p>Consulte informações consolidadas por módulo.</p>
+    </div>
+
+    <div class="cards-grid">
+
+        <a href="relatorio-cadastros.html" class="dashboard-card">
+            <i class="fa-solid fa-users"></i>
+            <h2>Relatórios de Cadastros</h2>
+            <p>Filtre empresas, professores, status e vínculos cadastrados.</p>
+        </a>
+
+        <a href="relatorio-cronogramas.html" class="dashboard-card">
+            <i class="fa-solid fa-calendar-days"></i>
+            <h2>Relatórios de Cronogramas</h2>
+            <p>Visualize cronogramas por empresa, professor, período e exercícios.</p>
+        </a>
+
+        <a href="relatorio-contas-pagar.html" class="dashboard-card">
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+            <h2>Contas a Pagar</h2>
+            <p>Acompanhe vencimentos, valores, classificações e pessoas vinculadas.</p>
+        </a>
+
+        <a href="relatorio-contas-receber.html" class="dashboard-card">
+            <i class="fa-solid fa-money-check-dollar"></i>
+            <h2>Contas a Receber</h2>
+            <p>Consulte recebimentos, empresas, valores e classificações.</p>
+        </a>
+
+    </div>
+
 </div>
 
-<div class="cards-grid">
-
-<a href="relatorio-cadastros.html" class="dashboard-card">
-<i class="fa-solid fa-users"></i>
-<h2>Relatórios de Cadastros</h2>
-<p>Empresas, professores e colaboradores.</p>
-</a>
-
-<a href="relatorio-cronogramas.html" class="dashboard-card">
-<i class="fa-solid fa-calendar-days"></i>
-<h2>Relatórios de Cronogramas</h2>
-<p>Cronogramas e exercícios.</p>
-</a>
-
-<a href="relatorio-contas-pagar.html" class="dashboard-card">
+</body>
 </html>
