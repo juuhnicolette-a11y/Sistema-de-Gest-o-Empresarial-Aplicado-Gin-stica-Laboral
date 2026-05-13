@@ -1,80 +1,91 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro Exercício | VitaLab</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cadastro de Exercício | VitaLab</title>
 
-    <link rel="stylesheet" href="style.css">
-
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body class="system-page">
 
-    <div class="sidebar">
-
+<div class="sidebar">
+    <div class="sidebar-logo">
+        <i class="fa-solid fa-person-running"></i>
         <h2>VitaLab</h2>
+    </div>
 
-        <ul>
-            <li><i class="fa-solid fa-users"></i> Cadastros</li>
-            <li><i class="fa-solid fa-calendar-check"></i> Planejamento</li>
-            <li><i class="fa-solid fa-money-bill-wave"></i> Financeiro</li>
-            <li><i class="fa-solid fa-chart-column"></i> Relatórios</li>
-        </ul>
+    <ul class="sidebar-menu">
+        <li><a href="dashboard.html"><i class="fa-solid fa-house"></i>Dashboard</a></li>
+        <li><a href="cadastros.html"><i class="fa-solid fa-users"></i>Cadastros</a></li>
+        <li><a href="planejamento.html"><i class="fa-solid fa-calendar-check"></i>Planejamento</a></li>
+        <li><a href="financeiro.html"><i class="fa-solid fa-wallet"></i>Financeiro</a></li>
+        <li><a href="relatorios.html"><i class="fa-solid fa-chart-column"></i>Relatórios</a></li>
+    </ul>
+</div>
+
+<div class="content-area">
+
+    <div class="topbar">
+        <h1>Cadastro de Exercício</h1>
+        <p>Preencha os dados do exercício, adaptações e arquivos de apoio.</p>
+    </div>
+
+    <div class="form-card">
+
+        <div class="table-header">
+            <h2>Dados do Exercício</h2>
+        </div>
+
+        <div class="form-grid">
+
+            <div>
+                <label>Nome do Exercício</label>
+                <input type="text" placeholder="Ex: Alongamento Cervical">
+            </div>
+
+            <div>
+                <label>Qtd Repetições</label>
+                <input type="number" placeholder="Ex: 10">
+            </div>
+
+            <div>
+                <label>Tempo</label>
+                <input type="text" placeholder="Ex: 30 segundos">
+            </div>
+
+            <div>
+                <label>Adaptações</label>
+                <textarea placeholder="Descreva adaptações para limitações físicas, se necessário."></textarea>
+            </div>
+
+            <div>
+                <label>Upload de Imagem</label>
+                <input type="file">
+            </div>
+
+            <div>
+                <label>Upload de Vídeo</label>
+                <input type="file">
+            </div>
+
+        </div>
+
+        <div class="action-buttons">
+            <a href="exercicios.html">
+                <button type="button" class="secondary-button">Cancelar</button>
+            </a>
+
+            <a href="exercicios.html">
+                <button type="button" class="secondary-button">Salvar Exercício</button>
+            </a>
+        </div>
 
     </div>
 
-    <div class="content-area">
-
-        <div class="top-bar">
-            <h1>Cadastro de Exercício</h1>
-        </div>
-
-        <div class="info-card">
-
-            <div class="form-grid">
-
-                <div>
-                    <label>Nome do Exercício</label>
-                    <input type="text">
-                </div>
-
-                <div>
-                    <label>Qtd Repetições</label>
-                    <input type="text">
-                </div>
-
-                <div>
-                    <label>Tempo</label>
-                    <input type="text">
-                </div>
-
-                <div>
-                    <label>Adaptações</label>
-                    <textarea></textarea>
-                </div>
-
-                <div>
-                    <label>Upload Imagem</label>
-                    <input type="file">
-                </div>
-
-                <div>
-                    <label>Upload Vídeo</label>
-                    <input type="file">
-                </div>
-
-            </div>
-
-            <div class="button-group">
-                <button>Salvar Exercício</button>
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 </body>
 </html>
