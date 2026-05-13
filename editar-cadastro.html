@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Editar Cadastro | VitaLab</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body class="system-page">
+
+<div class="sidebar">
+
+    <div class="sidebar-logo">
+        <i class="fa-solid fa-person-running"></i>
+        <h2>VitaLab</h2>
+    </div>
+
+    <ul class="sidebar-menu">
+        <li><a href="dashboard.html"><i class="fa-solid fa-house"></i>Dashboard</a></li>
+        <li><a href="cadastros.html"><i class="fa-solid fa-users"></i>Cadastros</a></li>
+        <li><a href="planejamento.html"><i class="fa-solid fa-calendar-check"></i>Planejamento</a></li>
+        <li><a href="financeiro.html"><i class="fa-solid fa-wallet"></i>Financeiro</a></li>
+        <li><a href="relatorios.html"><i class="fa-solid fa-chart-column"></i>Relatórios</a></li>
+    </ul>
+
+</div>
+
+<div class="content-area">
+
+    <div class="topbar">
+        <h1>Editar Cadastro</h1>
+        <p>Atualize os dados da empresa contratante e do professor responsável.</p>
+    </div>
+
+    <form>
+
+        <div class="form-card">
+
+            <div class="table-header">
+                <h2>Empresa Contratante</h2>
+            </div>
+
+            <div class="form-grid">
+
+                <div>
+                    <label>Razão Social</label>
+                    <input type="text" value="Vita Corporate LTDA">
+                </div>
+
+                <div>
+                    <label>Nome Fantasia</label>
+                    <input type="text" value="Vita Corporate">
+                </div>
+
+                <div>
+                    <label>CNPJ</label>
+                    <input type="text" value="00.000.000/0001-00">
+                </div>
+
+                <div>
+                    <label>Inscrição Estadual</label>
+                    <input type="text" value="123456789">
+                </div>
+
+                <div>
+                    <label>Endereço</label>
+                    <input type="text" value="Americana/SP">
+                </div>
+
+                <div>
+                    <label>Contato Responsável</label>
+                    <input type="text" value="Maria Souza">
+                </div>
+
+                <div>
+                    <label>E-mail</label>
+                    <input type="email" value="contato@empresa.com">
+                </div>
+
+                <div>
+                    <label>Data Início Contrato</label>
+                    <input type="date" value="2026-01-01">
+                </div>
+
+                <div>
+                    <label>Data Renovação Contrato</label>
+                    <input type="date" value="2027-01-01">
+                </div>
+
+                <div>
+                    <label>Valor Pago Mensal</label>
+                    <input type="text" value="R$ 2.500,00">
+                </div>
+
+                <div>
+                    <label>Dia Pagamento</label>
+                    <input type="number" value="10">
+                </div>
+
+                <div>
+                    <label>Horários/Dias das Aulas</label>
+                    <input type="text" value="Segunda e quarta, 09h">
+                </div>
+
+                <div>
+                    <label>Professor(es) Responsável</label>
+                    <input type="text" value="João Silva">
+                </div>
+
+                <div>
+                    <label>Dados Pagamento</label>
+                    <input type="text" value="PIX">
+                </div>
+
+                <div>
+                    <label>Quantidade de Alunos</label>
+                    <input type="number" value="45">
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="form-card">
+
+            <div class="table-header">
+                <h2>Professor</h2>
+            </div>
+
+            <div class="form-grid">
+
+                <div>
+                    <label>Nome</label>
+                    <input type="text" value="João Silva">
+                </div>
+
+                <div>
+                    <label>CPF</label>
+                    <input type="text" value="000.000.000-00">
+                </div>
+
+                <div>
+                    <label>Registro MEI</label>
+                    <input type="text" value="123456">
+                </div>
+
+                <div>
+                    <label>Registro CREF</label>
+                    <input type="text" value="12345-G/SP">
+                </div>
+
+                <div>
+                    <label>Endereço</label>
+                    <input type="text" value="Americana/SP">
+                </div>
+
+                <div>
+                    <label>E-mail</label>
+                    <input type="email" value="professor@email.com">
+                </div>
+
+                <div>
+                    <label>Dia Pagamento</label>
+                    <input type="number" value="05">
+                </div>
+
+                <div>
+                    <label>Empresas Vinculadas</label>
+                    <input type="text" value="Vita Corporate">
+                </div>
+
+                <div>
+                    <label>Valor Pagamento</label>
+                    <input type="text" value="R$ 1.200,00">
+                </div>
+
+                <div>
+                    <label>Dados Pagamento</label>
+                    <input type="text" value="PIX">
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="action-buttons">
+            <a href="visualizacao-cadastro.html">
+                <button type="button" class="secondary-button">Cancelar</button>
+            </a>
+
+            <a href="visualizacao-cadastro.html">
+                <button type="button" class="secondary-button">Salvar Alterações</button>
+            </a>
+        </div>
+
+    </form>
+
+</div>
+
+</body>
+</html>
