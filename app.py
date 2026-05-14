@@ -22,6 +22,7 @@ def visualizacao_cadastro():
 def editar_cadastro():
     return render_template("editar-cadastro.html")
 
+<<<<<<< HEAD
 @app.route("/planejamento")
 def planejamento():
     return render_template("planejamento.html")
@@ -36,3 +37,7 @@ def relatorios():
 
 if __name__ == "__main__":
     app.run(debug=True)
+=======
+if __name__ == "__main__":
+    app.run(debug=True)
+>>>>>>> 57f539c90048fc28c25a199aacff999dda80cb03
