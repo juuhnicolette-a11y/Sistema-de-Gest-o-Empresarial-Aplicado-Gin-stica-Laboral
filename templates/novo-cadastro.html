@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Editar Cadastro | VitaLab</title>
+<title>Novo Cadastro | VitaLab</title>
 
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -12,7 +12,6 @@
 <body class="system-page">
 
 <div class="sidebar">
-
     <div class="sidebar-logo">
         <i class="fa-solid fa-person-running"></i>
         <h2>VitaLab</h2>
@@ -25,112 +24,105 @@
         <li><a href="/financeiro"><i class="fa-solid fa-wallet"></i>Financeiro</a></li>
         <li><a href="/relatorios"><i class="fa-solid fa-chart-column"></i>Relatórios</a></li>
     </ul>
-
 </div>
 
 <div class="content-area">
 
     <div class="topbar">
-        <h1>Editar Cadastro</h1>
-        <p>Atualize os dados conforme o tipo de cadastro selecionado.</p>
+        <h1>Novo Cadastro</h1>
+        <p>Cadastre uma nova empresa ou professor.</p>
     </div>
 
-    <form method="POST" action="/editar-cadastro/{{ cadastro['id'] }}">
+    <form method="POST" action="/novo-cadastro">
 
         <div class="form-card">
-
             <div class="table-header">
                 <h2>Tipo de Cadastro</h2>
             </div>
 
             <div class="form-grid">
-
                 <div>
                     <label>Tipo</label>
                     <select name="tipo" id="tipoCadastro" onchange="alternarTipoCadastro()">
-                        <option value="Empresa" {% if cadastro['tipo'] == 'Empresa' %}selected{% endif %}>Empresa</option>
-                        <option value="Professor" {% if cadastro['tipo'] == 'Professor' %}selected{% endif %}>Professor</option>
+                        <option value="Empresa">Empresa</option>
+                        <option value="Professor">Professor</option>
                     </select>
                 </div>
 
                 <div>
                     <label>Status</label>
                     <select name="status">
-                        <option value="Ativo" {% if cadastro['status'] == 'Ativo' %}selected{% endif %}>Ativo</option>
-                        <option value="Inativo" {% if cadastro['status'] == 'Inativo' %}selected{% endif %}>Inativo</option>
+                        <option value="Ativo">Ativo</option>
+                        <option value="Inativo">Inativo</option>
                     </select>
                 </div>
-
             </div>
-
         </div>
 
         <div class="form-card" id="camposEmpresa">
-
             <div class="table-header">
                 <h2>Empresa Contratante</h2>
             </div>
 
             <div class="form-grid">
-
                 <div>
                     <label>Razão Social</label>
-                    <input type="text" name="razao_social" value="{{ cadastro['razao_social'] }}">
+                    <input type="text" name="razao_social">
                 </div>
 
                 <div>
                     <label>Nome Fantasia</label>
-                    <input type="text" name="nome_fantasia" value="{{ cadastro['nome_fantasia'] }}">
+                    <input type="text" name="nome_fantasia">
                 </div>
 
                 <div>
                     <label>CNPJ</label>
-                    <input type="text" name="cnpj" value="{{ cadastro['cnpj'] }}">
+                    <input type="text" name="cnpj">
                 </div>
 
                 <div>
                     <label>Inscrição Estadual</label>
-                    <input type="text" name="inscricao_estadual" value="{{ cadastro['inscricao_estadual'] }}">
+                    <input type="text" name="inscricao_estadual">
                 </div>
 
                 <div>
                     <label>Endereço</label>
-                    <input type="text" name="endereco" value="{{ cadastro['endereco'] }}">
+                    <input type="text" name="endereco">
                 </div>
 
                 <div>
                     <label>Contato Responsável</label>
-                    <input type="text" name="contato_responsavel" value="{{ cadastro['contato_responsavel'] }}">
+                    <input type="text" name="contato_responsavel">
                 </div>
 
                 <div>
                     <label>E-mail</label>
-                    <input type="email" name="email" value="{{ cadastro['email'] or '' }}">
+                    <input type="text" name="email">
                 </div>
 
                 <div>
                     <label>Data Início Contrato</label>
-                    <input type="date" name="data_inicio_contrato" value="{{ cadastro['data_inicio_contrato'] }}">
+                    <input type="date" name="data_inicio_contrato">
                 </div>
 
                 <div>
                     <label>Data Renovação Contrato</label>
-                    <input type="date" name="data_renovacao_contrato" value="{{ cadastro['data_renovacao_contrato'] }}">
+                    <input type="date" name="data_renovacao_contrato">
                 </div>
 
                 <div>
                     <label>Valor Pago Mensal</label>
-                    <input type="text" name="valor_mensal" value="{{ cadastro['valor_mensal'] }}">
+                    <input type="text" name="valor_mensal">
                 </div>
 
                 <div>
                     <label>Dia Pagamento</label>
-                    <input type="number" name="dia_pagamento" value="{{ cadastro['dia_pagamento'] }}">
+                    <input type="number" name="dia_pagamento">
                 </div>
 
                 <div>
                     <label>Horários/Dias das Aulas</label>
-                    <input type="text" name="horarios_aulas" value="{{ cadastro['horarios_aulas'] }}">
+                    <input type="text" name="horarios_aulas">
                 </div>
 
                 <div>
@@ -139,8 +131,7 @@
                         <option value="">Selecione um professor</option>
 
                         {% for professor in professores %}
-                        <option value="{{ professor['id'] }}"
-                            {% if cadastro['professor_responsavel_id'] == professor['id'] %}selected{% endif %}>
+                        <option value="{{ professor['id'] }}">
                             {{ professor['nome_professor'] }}
                         </option>
                         {% endfor %}
@@ -149,86 +140,82 @@
 
                 <div>
                     <label>Dados Pagamento</label>
-                    <input type="text" name="dados_pagamento" value="{{ cadastro['dados_pagamento'] }}">
+                    <input type="text" name="dados_pagamento">
                 </div>
 
                 <div>
                     <label>Quantidade de Alunos</label>
-                    <input type="number" name="quantidade_alunos" value="{{ cadastro['quantidade_alunos'] }}">
+                    <input type="number" name="quantidade_alunos">
                 </div>
-
             </div>
-
         </div>
 
         <div class="form-card" id="camposProfessor">
-
             <div class="table-header">
                 <h2>Professor</h2>
             </div>
 
             <div class="form-grid">
-
                 <div>
                     <label>Nome</label>
-                    <input type="text" name="nome_professor" value="{{ cadastro['nome_professor'] }}">
+                    <input type="text" name="nome_professor">
                 </div>
 
                 <div>
                     <label>CPF</label>
-                    <input type="text" name="cpf" value="{{ cadastro['cpf'] }}">
+                    <input type="text" name="cpf">
                 </div>
 
                 <div>
                     <label>Registro MEI</label>
-                    <input type="text" name="registro_mei" value="{{ cadastro['registro_mei'] }}">
+                    <input type="text" name="registro_mei">
                 </div>
 
                 <div>
                     <label>Registro CREF</label>
-                    <input type="text" name="registro_cref" value="{{ cadastro['registro_cref'] }}">
+                    <input type="text" name="registro_cref">
                 </div>
 
                 <div>
                     <label>Endereço</label>
-                    <input type="text" name="endereco" value="{{ cadastro['endereco'] }}">
+                    <input type="text" name="endereco">
                 </div>
 
                 <div>
                     <label>E-mail</label>
-                    <input type="email" name="email" value="{{ cadastro['email'] or '' }}">
+                    <input type="text" name="email">
                 </div>
 
                 <div>
                     <label>Dia Pagamento</label>
-                    <input type="number" name="dia_pagamento" value="{{ cadastro['dia_pagamento'] }}">
+                    <input type="number" name="dia_pagamento">
                 </div>
 
                 <div>
                     <label>Empresas Vinculadas</label>
-                    <input type="text" name="empresas_vinculadas" value="{{ cadastro['empresas_vinculadas'] }}">
+                    <input type="text" name="empresas_vinculadas">
                 </div>
 
                 <div>
                     <label>Valor Pagamento</label>
-                    <input type="text" name="valor_pagamento" value="{{ cadastro['valor_pagamento'] }}">
+                    <input type="text" name="valor_pagamento">
                 </div>
 
                 <div>
                     <label>Dados Pagamento</label>
-                    <input type="text" name="dados_pagamento" value="{{ cadastro['dados_pagamento'] }}">
+                    <input type="text" name="dados_pagamento">
                 </div>
-
             </div>
-
         </div>
 
         <div class="action-buttons">
-            <a href="/visualizacao-cadastro/{{ cadastro['id'] }}">
+            <a href="/cadastros">
                 <button type="button" class="secondary-button">Cancelar</button>
             </a>
 
-            <input type="submit" class="secondary-button" value="Salvar Alterações">
+            <button type="submit" class="secondary-button">
+                Salvar Cadastro
+            </button>
         </div>
 
     </form>

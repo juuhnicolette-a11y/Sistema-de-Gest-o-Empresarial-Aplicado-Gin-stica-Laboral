@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cadastro de Exercício | VitaLab</title>
+<title>Editar Exercício | VitaLab</title>
 
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -29,11 +29,11 @@
 <div class="content-area">
 
     <div class="topbar">
-        <h1>Cadastro de Exercício</h1>
+        <h1>Editar Exercício</h1>
         <p>Preencha os dados do exercício, adaptações e arquivos de apoio.</p>
     </div>
 
-    <form method="POST" action="/cadastro-exercicio">
+    <form method="POST" action="/editar-exercicio/{{ exercicio['id'] }}">
 
         <div class="form-card">
 
@@ -45,32 +45,32 @@
 
                 <div>
                     <label>Nome do Exercício</label>
-                    <input type="text" name="nome" placeholder="Ex: Alongamento Cervical">
+                    <input type="text" name="nome" value="{{ exercicio['nome'] }}">
                 </div>
 
                 <div>
                     <label>Qtd Repetições</label>
-                    <input type="number" name="repeticoes" placeholder="Ex: 10">
+                    <input type="number" name="repeticoes" value="{{ exercicio['repeticoes'] }}">
                 </div>
 
                 <div>
                     <label>Tempo</label>
-                    <input type="text" name="tempo" placeholder="Ex: 30 segundos">
+                    <input type="text" name="tempo" value="{{ exercicio['tempo'] }}">
                 </div>
 
                 <div>
                     <label>Adaptações</label>
-                    <textarea name="adaptacoes" placeholder="Descreva adaptações para limitações físicas, se necessário."></textarea>
+                    <textarea name="adaptacoes">{{ exercicio['adaptacoes'] }}</textarea>
                 </div>
 
                 <div>
                     <label>Upload de Imagem</label>
-                    <input type="text" name="imagem" placeholder="Informe o nome ou link da imagem">
+                    <input type="text" name="imagem" value="{{ exercicio['imagem'] }}">
                 </div>
 
                 <div>
                     <label>Upload de Vídeo</label>
-                    <input type="text" name="video" placeholder="Informe o nome ou link do vídeo">
+                    <input type="text" name="video" value="{{ exercicio['video'] }}">
                 </div>
 
             </div>
@@ -81,7 +81,7 @@
                 </a>
 
                 <button type="submit" class="secondary-button">
-                    Salvar Exercício
+                    Salvar Alterações
                 </button>
             </div>
 

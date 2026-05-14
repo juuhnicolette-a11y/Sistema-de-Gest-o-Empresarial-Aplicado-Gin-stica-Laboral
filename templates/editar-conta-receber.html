@@ -11,7 +11,11 @@
 <body class="system-page">
 
 <div class="sidebar">
-    <div class="sidebar-logo"><i class="fa-solid fa-person-running"></i><h2>VitaLab</h2></div>
+    <div class="sidebar-logo">
+        <i class="fa-solid fa-person-running"></i>
+        <h2>VitaLab</h2>
+    </div>
+
     <ul class="sidebar-menu">
         <li><a href="/dashboard"><i class="fa-solid fa-house"></i>Dashboard</a></li>
         <li><a href="/cadastros"><i class="fa-solid fa-users"></i>Cadastros</a></li>
@@ -25,74 +29,152 @@
 
     <div class="topbar">
         <h1>Editar Conta a Receber</h1>
-        <p>Atualize os dados da receita selecionada.</p>
+        <p>Atualize os dados do recebimento selecionado.</p>
     </div>
 
-    <div class="form-card">
+    <form method="POST" action="/editar-conta-receber/{{ conta['id'] }}">
 
-        <div class="table-header">
-            <h2>Dados da Conta</h2>
+        <div class="form-card">
+
+            <div class="table-header">
+                <h2>Dados da Conta</h2>
+            </div>
+
+            <div class="form-grid">
+
+                <div>
+                    <label>Data de Recebimento</label>
+                    <input type="date"
+                           name="data_recebimento"
+                           value="{{ conta['data_recebimento'] or '' }}">
+                </div>
+
+                <div>
+                    <label>Valor</label>
+                    <input type="text"
+                           name="valor"
+                           value="{{ conta['valor'] or '' }}">
+                </div>
+
+                <div>
+                    <label>Cadastro Vinculado</label>
+
+                    <select name="cadastro_id">
+
+                        <option value="">
+                            Selecione pessoa/empresa
+                        </option>
+
+                        {% for cadastro in cadastros %}
+
+                        <option value="{{ cadastro['id'] }}"
+                            {% if conta['cadastro_id'] == cadastro['id'] %}
+                                selected
+                            {% endif %}>
+
+                            {% if cadastro['tipo'] == 'Empresa' %}
+                                {{ cadastro['nome_fantasia'] }}
+                            {% else %}
+                                {{ cadastro['nome_professor'] }}
+                            {% endif %}
+
+                        </option>
+
+                        {% endfor %}
+
+                    </select>
+                </div>
+
+                <div>
+                    <label>Classificação</label>
+
+                    <select name="classificacao">
+
+                        <option value="Mensalidade"
+                            {% if conta['classificacao'] == 'Mensalidade' %}
+                                selected
+                            {% endif %}>
+                            Mensalidade
+                        </option>
+
+                        <option value="Contrato"
+                            {% if conta['classificacao'] == 'Contrato' %}
+                                selected
+                            {% endif %}>
+                            Contrato
+                        </option>
+
+                        <option value="Serviço avulso"
+                            {% if conta['classificacao'] == 'Serviço avulso' %}
+                                selected
+                            {% endif %}>
+                            Serviço avulso
+                        </option>
+
+                        <option value="Outros"
+                            {% if conta['classificacao'] == 'Outros' %}
+                                selected
+                            {% endif %}>
+                            Outros
+                        </option>
+
+                    </select>
+                </div>
+
+                <div>
+                    <label>Status</label>
+
+                    <select name="status">
+
+                        <option value="Pendente"
+                            {% if conta['status'] == 'Pendente' %}
+                                selected
+                            {% endif %}>
+                            Pendente
+                        </option>
+
+                        <option value="Recebido"
+                            {% if conta['status'] == 'Recebido' %}
+                                selected
+                            {% endif %}>
+                            Recebido
+                        </option>
+
+                        <option value="Cancelado"
+                            {% if conta['status'] == 'Cancelado' %}
+                                selected
+                            {% endif %}>
+                            Cancelado
+                        </option>
+
+                    </select>
+                </div>
+
+                <div>
+                    <label>Observações</label>
+
+                    <textarea name="observacoes">{{ conta['observacoes'] or '' }}</textarea>
+                </div>
+
+            </div>
+
+            <div class="action-buttons">
+
+                <a href="/contas-receber">
+                    <button type="button" class="secondary-button">
+                        Cancelar
+                    </button>
+                </a>
+
+                <button type="submit" class="secondary-button">
+                    Salvar Alterações
+                </button>
+
+            </div>
+
         </div>
 
-        <div class="form-grid">
-
-            <div>
-                <label>Data de Recebimento</label>
-                <input type="date" value="2026-05-05">
-            </div>
-
-            <div>
-                <label>Valor</label>
-                <input type="text" value="R$ 2.500,00">
-            </div>
-
-            <div>
-                <label>Cadastro Vinculado</label>
-                <select>
-                    <option>Empresa Saúde Ativa</option>
-                    <option>Vita Corporate</option>
-                    <option>Bem Estar Tech</option>
-                    <option>João Silva</option>
-                </select>
-            </div>
-
-            <div>
-                <label>Classificação</label>
-                <select>
-                    <option>Mensalidade</option>
-                    <option>Contrato</option>
-                    <option>Serviço avulso</option>
-                    <option>Outros</option>
-                </select>
-            </div>
-
-            <div>
-                <label>Status</label>
-                <select>
-                    <option>Recebido</option>
-                    <option>Pendente</option>
-                    <option>Cancelado</option>
-                </select>
-            </div>
-
-            <div>
-                <label>Observações</label>
-                <textarea>Recebimento mensal da empresa contratante.</textarea>
-            </div>
-
-        </div>
-
-        <div class="action-buttons">
-            <a href="/contas-receber">
-                <button type="button" class="secondary-button">Cancelar</button>
-            </a>
-
-            <a href="/contas-receber">
-                <button type="button" class="secondary-button">Salvar Alterações</button>
-            </a>
-        </div>
-
-    </div>
+    </form>
 
 </div>
 

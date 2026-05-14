@@ -28,72 +28,85 @@
         <p>Atualize os dados da despesa selecionada.</p>
     </div>
 
-    <div class="form-card">
+    <form method="POST" action="/editar-conta-pagar/{{ conta['id'] }}">
 
-        <div class="table-header">
-            <h2>Dados da Conta</h2>
+        <div class="form-card">
+
+            <div class="table-header">
+                <h2>Dados da Conta</h2>
+            </div>
+
+            <div class="form-grid">
+
+                <div>
+                    <label>Data de Vencimento</label>
+                    <input type="date" name="data_vencimento" value="{{ conta['data_vencimento'] or '' }}">
+                </div>
+
+                <div>
+                    <label>Valor</label>
+                    <input type="text" name="valor" value="{{ conta['valor'] or '' }}">
+                </div>
+
+                <div>
+                    <label>Cadastro Vinculado</label>
+                    <select name="cadastro_id">
+                        <option value="">Selecione pessoa/empresa</option>
+
+                        {% for cadastro in cadastros %}
+                        <option value="{{ cadastro['id'] }}"
+                            {% if conta['cadastro_id'] == cadastro['id'] %}selected{% endif %}>
+                            {% if cadastro['tipo'] == 'Empresa' %}
+                                {{ cadastro['nome_fantasia'] }}
+                            {% else %}
+                                {{ cadastro['nome_professor'] }}
+                            {% endif %}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div>
+                    <label>Classificação</label>
+                    <select name="classificacao">
+                        <option value="">Selecione a classificação</option>
+                        <option value="Professor" {% if conta['classificacao'] == 'Professor' %}selected{% endif %}>Professor</option>
+                        <option value="Fornecedor" {% if conta['classificacao'] == 'Fornecedor' %}selected{% endif %}>Fornecedor</option>
+                        <option value="Insumos" {% if conta['classificacao'] == 'Insumos' %}selected{% endif %}>Insumos</option>
+                        <option value="Serviços" {% if conta['classificacao'] == 'Serviços' %}selected{% endif %}>Serviços</option>
+                        <option value="Outros" {% if conta['classificacao'] == 'Outros' %}selected{% endif %}>Outros</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Status</label>
+                    <select name="status">
+                        <option value="Pendente" {% if conta['status'] == 'Pendente' %}selected{% endif %}>Pendente</option>
+                        <option value="Pago" {% if conta['status'] == 'Pago' %}selected{% endif %}>Pago</option>
+                        <option value="Cancelado" {% if conta['status'] == 'Cancelado' %}selected{% endif %}>Cancelado</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Observações</label>
+                    <textarea name="observacoes">{{ conta['observacoes'] or '' }}</textarea>
+                </div>
+
+            </div>
+
+            <div class="action-buttons">
+                <a href="/contas-pagar">
+                    <button type="button" class="secondary-button">Cancelar</button>
+                </a>
+
+                <button type="submit" class="secondary-button">
+                    Salvar Alterações
+                </button>
+            </div>
+
         </div>
 
-        <div class="form-grid">
-
-            <div>
-                <label>Data de Vencimento</label>
-                <input type="date" value="2026-05-10">
-            </div>
-
-            <div>
-                <label>Valor</label>
-                <input type="text" value="R$ 1.200,00">
-            </div>
-
-            <div>
-                <label>Cadastro Vinculado</label>
-                <select>
-                    <option>João Silva</option>
-                    <option>Maria Souza</option>
-                    <option>Fornecedor Fit</option>
-                    <option>Empresa Saúde Ativa</option>
-                </select>
-            </div>
-
-            <div>
-                <label>Classificação</label>
-                <select>
-                    <option>Professor</option>
-                    <option>Fornecedor</option>
-                    <option>Insumos</option>
-                    <option>Serviços</option>
-                    <option>Outros</option>
-                </select>
-            </div>
-
-            <div>
-                <label>Status</label>
-                <select>
-                    <option>Pendente</option>
-                    <option>Pago</option>
-                    <option>Cancelado</option>
-                </select>
-            </div>
-
-            <div>
-                <label>Observações</label>
-                <textarea>Pagamento mensal referente ao professor vinculado.</textarea>
-            </div>
-
-        </div>
-
-        <div class="action-buttons">
-            <a href="/contas-pagar">
-                <button type="button" class="secondary-button">Cancelar</button>
-            </a>
-
-            <a href="/contas-pagar">
-                <button type="button" class="secondary-button">Salvar Alterações</button>
-            </a>
-        </div>
-
-    </div>
+    </form>
 
 </div>
 

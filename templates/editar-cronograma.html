@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Novo Cronograma | VitaLab</title>
+<title>Editar Cronograma | VitaLab</title>
 
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -29,11 +29,11 @@
 <div class="content-area">
 
     <div class="topbar">
-        <h1>Novo Cronograma</h1>
-        <p>Monte um cronograma de aulas vinculando exercícios, empresa, professor e insumos.</p>
+        <h1>Editar Cronograma</h1>
+        <p>Atualize os dados do cronograma.</p>
     </div>
 
-    <form method="POST" action="/cadastro-cronograma">
+    <form method="POST">
 
         <div class="form-card">
 
@@ -45,56 +45,87 @@
 
                 <div>
                     <label>Empresa</label>
+
                     <select name="empresa_id">
-                        <option value="">Selecione a empresa</option>
 
                         {% for empresa in empresas %}
-                        <option value="{{ empresa['id'] }}">
+
+                        <option value="{{ empresa['id'] }}"
+                            {% if cronograma['empresa_id'] == empresa['id'] %}
+                                selected
+                            {% endif %}>
+
                             {{ empresa['nome_fantasia'] }}
+
                         </option>
+
                         {% endfor %}
+
                     </select>
                 </div>
 
                 <div>
                     <label>Professor Responsável</label>
+
                     <select name="professor_id">
-                        <option value="">Selecione o professor</option>
 
                         {% for professor in professores %}
-                        <option value="{{ professor['id'] }}">
+
+                        <option value="{{ professor['id'] }}"
+                            {% if cronograma['professor_id'] == professor['id'] %}
+                                selected
+                            {% endif %}>
+
                             {{ professor['nome_professor'] }}
+
                         </option>
+
                         {% endfor %}
+
                     </select>
                 </div>
 
                 <div>
                     <label>Exercícios</label>
+
                     <select name="exercicios" multiple>
+
                         {% for exercicio in exercicios %}
-                        <option value="{{ exercicio['id'] }}">
+
+                        <option value="{{ exercicio['id'] }}"
+                            {% if exercicio['id'] in exercicios_ids %}
+                                selected
+                            {% endif %}>
+
                             {{ exercicio['nome'] }}
+
                         </option>
+
                         {% endfor %}
+
                     </select>
                 </div>
 
                 <div>
                     <label>Insumos Necessários</label>
-                    <textarea name="insumos" placeholder="Ex: Colchonetes, faixas elásticas, halteres leves."></textarea>
+
+                    <textarea name="insumos">{{ cronograma['insumos'] }}</textarea>
                 </div>
 
             </div>
 
             <div class="action-buttons">
+
                 <a href="/cronogramas">
-                    <button type="button" class="secondary-button">Cancelar</button>
+                    <button type="button" class="secondary-button">
+                        Voltar
+                    </button>
                 </a>
 
                 <button type="submit" class="secondary-button">
-                    Salvar Cronograma
+                    Salvar Alterações
                 </button>
+
             </div>
 
         </div>

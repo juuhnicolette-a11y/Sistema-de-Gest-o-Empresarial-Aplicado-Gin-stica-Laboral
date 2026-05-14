@@ -12,7 +12,6 @@
 <body class="system-page">
 
 <div class="sidebar">
-
     <div class="sidebar-logo">
         <i class="fa-solid fa-person-running"></i>
         <h2>VitaLab</h2>
@@ -25,173 +24,165 @@
         <li><a href="/financeiro"><i class="fa-solid fa-wallet"></i>Financeiro</a></li>
         <li><a href="/relatorios"><i class="fa-solid fa-chart-column"></i>Relatórios</a></li>
     </ul>
-
 </div>
 
 <div class="content-area">
 
     <div class="topbar">
         <h1>Visualização de Cadastro</h1>
-        <p>Confira os detalhes da empresa contratante e do professor responsável.</p>
+        <p>Confira os dados do cadastro selecionado.</p>
     </div>
 
-    <div class="form-card">
+    {% if cadastro['tipo'] == 'Empresa' %}
 
+    <div class="form-card">
         <div class="table-header">
             <h2>Empresa Contratante</h2>
         </div>
 
         <div class="form-grid">
-
             <div>
                 <label>Razão Social</label>
-                <input type="text" value="Vita Corporate LTDA" readonly>
+                <input type="text" value="{{ cadastro['razao_social'] or '' }}" readonly>
             </div>
 
             <div>
                 <label>Nome Fantasia</label>
-                <input type="text" value="Vita Corporate" readonly>
+                <input type="text" value="{{ cadastro['nome_fantasia'] or '' }}" readonly>
             </div>
 
             <div>
                 <label>CNPJ</label>
-                <input type="text" value="00.000.000/0001-00" readonly>
+                <input type="text" value="{{ cadastro['cnpj'] or '' }}" readonly>
             </div>
 
             <div>
                 <label>Inscrição Estadual</label>
-                <input type="text" value="123456789" readonly>
+                <input type="text" value="{{ cadastro['inscricao_estadual'] or '' }}" readonly>
             </div>
 
             <div>
                 <label>Endereço</label>
-                <input type="text" value="Americana/SP" readonly>
+                <input type="text" value="{{ cadastro['endereco'] or '' }}" readonly>
             </div>
 
             <div>
                 <label>Contato Responsável</label>
-                <input type="text" value="Maria Souza" readonly>
+                <input type="text" value="{{ cadastro['contato_responsavel'] or '' }}" readonly>
             </div>
 
             <div>
                 <label>E-mail</label>
-                <input type="text" value="contato@empresa.com" readonly>
+                <input type="text" value="{{ cadastro['email'] or '' }}" readonly>
             </div>
 
             <div>
                 <label>Data Início Contrato</label>
-                <input type="text" value="01/01/2026" readonly>
+                <input type="text" value="{{ cadastro['data_inicio_contrato'] or '' }}" readonly>
             </div>
 
             <div>
                 <label>Data Renovação Contrato</label>
-                <input type="text" value="01/01/2027" readonly>
+                <input type="text" value="{{ cadastro['data_renovacao_contrato'] or '' }}" readonly>
             </div>
 
             <div>
                 <label>Valor Pago Mensal</label>
-                <input type="text" value="R$ 2.500,00" readonly>
+                <input type="text" value="{{ cadastro['valor_mensal'] or '' }}" readonly>
             </div>
 
             <div>
                 <label>Dia Pagamento</label>
-                <input type="text" value="10" readonly>
+                <input type="text" value="{{ cadastro['dia_pagamento'] or '' }}" readonly>
             </div>
 
             <div>
                 <label>Horários/Dias das Aulas</label>
-                <input type="text" value="Segunda e quarta, 09h" readonly>
-            </div>
-
-            <div>
-                <label>Professor(es) Responsável</label>
-                <input type="text" value="João Silva" readonly>
+                <input type="text" value="{{ cadastro['horarios_aulas'] or '' }}" readonly>
             </div>
 
             <div>
                 <label>Dados Pagamento</label>
-                <input type="text" value="PIX" readonly>
+                <input type="text" value="{{ cadastro['dados_pagamento'] or '' }}" readonly>
             </div>
 
             <div>
                 <label>Quantidade de Alunos</label>
-                <input type="text" value="45" readonly>
+                <input type="text" value="{{ cadastro['quantidade_alunos'] or '' }}" readonly>
             </div>
-
         </div>
-
     </div>
 
-    <br>
+    {% endif %}
+
+    {% if cadastro['tipo'] == 'Professor' %}
 
     <div class="form-card">
-
         <div class="table-header">
             <h2>Professor</h2>
         </div>
 
         <div class="form-grid">
-
             <div>
                 <label>Nome</label>
-                <input type="text" value="João Silva" readonly>
+                <input type="text" value="{{ cadastro['nome_professor'] or '' }}" readonly>
             </div>
 
             <div>
                 <label>CPF</label>
-                <input type="text" value="000.000.000-00" readonly>
+                <input type="text" value="{{ cadastro['cpf'] or '' }}" readonly>
             </div>
 
             <div>
                 <label>Registro MEI</label>
-                <input type="text" value="123456" readonly>
+                <input type="text" value="{{ cadastro['registro_mei'] or '' }}" readonly>
             </div>
 
             <div>
                 <label>Registro CREF</label>
-                <input type="text" value="12345-G/SP" readonly>
+                <input type="text" value="{{ cadastro['registro_cref'] or '' }}" readonly>
             </div>
 
             <div>
                 <label>Endereço</label>
-                <input type="text" value="Americana/SP" readonly>
+                <input type="text" value="{{ cadastro['endereco'] or '' }}" readonly>
             </div>
 
             <div>
                 <label>E-mail</label>
-                <input type="text" value="professor@email.com" readonly>
+                <input type="text" value="{{ cadastro['email'] or '' }}" readonly>
             </div>
 
             <div>
                 <label>Dia Pagamento</label>
-                <input type="text" value="05" readonly>
+                <input type="text" value="{{ cadastro['dia_pagamento'] or '' }}" readonly>
             </div>
 
             <div>
                 <label>Empresas Vinculadas</label>
-                <input type="text" value="Vita Corporate" readonly>
+                <input type="text" value="{{ cadastro['empresas_vinculadas'] or '' }}" readonly>
             </div>
 
             <div>
                 <label>Valor Pagamento</label>
-                <input type="text" value="R$ 1.200,00" readonly>
+                <input type="text" value="{{ cadastro['valor_pagamento'] or '' }}" readonly>
             </div>
 
             <div>
                 <label>Dados Pagamento</label>
-                <input type="text" value="PIX" readonly>
+                <input type="text" value="{{ cadastro['dados_pagamento'] or '' }}" readonly>
             </div>
-
         </div>
-
     </div>
+
+    {% endif %}
 
     <div class="action-buttons">
         <a href="/cadastros">
             <button class="secondary-button">Voltar</button>
         </a>
 
-        <a href="/editar-cadastro">
+        <a href="/editar-cadastro/{{ cadastro['id'] }}">
             <button class="secondary-button">Editar Cadastro</button>
         </a>
     </div>

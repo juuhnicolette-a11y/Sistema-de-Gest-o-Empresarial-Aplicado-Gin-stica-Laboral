@@ -37,33 +37,43 @@
 
     <div class="table-card">
 
-        <div class="filters-grid">
+        <form method="GET" action="/cadastros">
+            <div class="filters-grid">
 
-            <input type="text" placeholder="Buscar cadastro...">
+            <input type="text" name="busca" placeholder="Buscar cadastro...">
 
-            <select>
-                <option>Empresas</option>
-                <option>Professores</option>
-            </select>
+<select name="tipo">
+    <option value="">Todos</option>
+    <option value="Empresa">Empresas</option>
+    <option value="Professor">Professores</option>
+</select>
 
-            <select>
-                <option>Ativos</option>
-                <option>Inativos</option>
-            </select>
+<select name="status">
+    <option value="">Todos</option>
+    <option value="Ativo">Ativos</option>
+    <option value="Inativo">Inativos</option>
+</select>
 
         </div>
-
+    
         <div class="table-header">
 
             <h2>Lista de Cadastros</h2>
 
-            <a href="/visualizacao-cadastro">
-                <button class="secondary-button">
-                    Acessar Cadastro
+            <div class="header-actions">
+                <button type="submit" class="secondary-button">
+                    Buscar
                 </button>
-            </a>
 
-        </div>
+            <a href="/novo-cadastro">
+            <button type="button" class="secondary-button">
+                Novo Cadastro
+            </button>
+        </a>
+    </div>
+
+</div>
+</form>
 
         <div class="table-wrapper">
 
@@ -79,33 +89,33 @@
                 </thead>
 
                 <tbody>
+                    {% for cadastro in cadastros %}
 
-                    <tr>
-                        <td>Empresa Saúde Ativa</td>
-                        <td>Empresa</td>
-                        <td>Ativo</td>
+<tr>
 
-                        <td>
-                            <a href="/visualizacao-cadastro" class="record-link">
-                                Ver
-                                <i class="fa-solid fa-chevron-right"></i>
-                            </a>
-                        </td>
-                    </tr>
+    <td>
+        {% if cadastro["tipo"] == "Empresa" %}
+            {{ cadastro["nome_fantasia"] }}
+        {% else %}
+            {{ cadastro["nome_professor"] }}
+        {% endif %}
+    </td>
 
-                    <tr>
-                        <td>João Silva</td>
-                        <td>Professor</td>
-                        <td>Ativo</td>
+    <td>{{ cadastro["tipo"] }}</td>
 
-                        <td>
-                            <a href="/visualizacao-cadastro" class="record-link">
-                                Ver
-                                <i class="fa-solid fa-chevron-right"></i>
-                            </a>
-                        </td>
-                    </tr>
+    <td>{{ cadastro["status"] }}</td>
 
+    <td>
+        <a href="/visualizacao-cadastro/{{ cadastro['id'] }}" class="record-link">
+            Ver
+            <i class="fa-solid fa-chevron-right"></i>
+        </a>
+    </td>
+
+</tr>
+
+{% endfor %}
+                   
                 </tbody>
 
             </table>

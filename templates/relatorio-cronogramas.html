@@ -25,24 +25,40 @@
 
     <div class="topbar">
         <h1>Relatório de Cronogramas</h1>
-        <p>Filtre cronogramas por professor e insumos necessários.</p>
+        <p>Filtre cronogramas por professor, empresa e insumos necessários.</p>
     </div>
 
     <div class="table-card">
 
-        <div class="filters-grid">
-            <select>
-                <option>Professor</option>
-                <option>João Silva</option>
-                <option>Maria Souza</option>
-            </select>
-            <input type="text" placeholder="Insumos">
-            <input type="text" placeholder="Empresa">
-        </div>
+        <form method="GET" action="/relatorio-cronogramas">
 
-        <div class="table-header">
-            <h2>Resultado do Relatório</h2>
-        </div>
+            <div class="filters-grid">
+                <select name="professor_id">
+                    <option value="">Professor</option>
+
+                    {% for professor in professores %}
+                    <option value="{{ professor['id'] }}">
+                        {{ professor['nome_professor'] }}
+                    </option>
+                    {% endfor %}
+                </select>
+
+                <input type="text" name="insumos" placeholder="Insumos">
+
+                <input type="text" name="empresa" placeholder="Empresa">
+            </div>
+
+            <div class="table-header">
+                <h2>Resultado do Relatório</h2>
+
+                <div class="header-actions">
+                    <button type="submit" class="secondary-button">
+                        Buscar
+                    </button>
+                </div>
+            </div>
+
+        </form>
 
         <div class="table-wrapper">
             <table>
@@ -50,13 +66,20 @@
                     <tr>
                         <th>Empresa</th>
                         <th>Professor</th>
-                        <th>Exercícios/Dia</th>
+                        <th>Exercícios</th>
                         <th>Insumos</th>
                     </tr>
                 </thead>
+
                 <tbody>
-                    <tr><td>Empresa Saúde Ativa</td><td>João Silva</td><td>Alongamento cervical</td><td>Colchonetes</td></tr>
-                    <tr><td>Vita Corporate</td><td>Maria Souza</td><td>Rotação de ombros</td><td>Faixas elásticas</td></tr>
+                    {% for cronograma in cronogramas %}
+                    <tr>
+                        <td>{{ cronograma['empresa'] or '' }}</td>
+                        <td>{{ cronograma['professor'] or '' }}</td>
+                        <td>{{ cronograma['exercicios'] or '' }}</td>
+                        <td>{{ cronograma['insumos'] or '' }}</td>
+                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>

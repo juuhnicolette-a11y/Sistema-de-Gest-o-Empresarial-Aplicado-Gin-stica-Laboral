@@ -402,3 +402,9 @@ td{
     background:#11c4a7;
     color:white;
 }
+
+.header-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}

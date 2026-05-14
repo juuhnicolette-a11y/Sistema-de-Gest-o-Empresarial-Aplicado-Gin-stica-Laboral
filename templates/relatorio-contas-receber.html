@@ -25,25 +25,38 @@
 
     <div class="topbar">
         <h1>Relatório de Contas a Receber</h1>
-        <p>Filtre recebimentos por data de recebimento.</p>
+        <p>Filtre recebimentos por data e classificação.</p>
     </div>
 
     <div class="table-card">
 
-        <div class="filters-grid">
-            <input type="date" title="Recebimento inicial">
-            <input type="date" title="Recebimento final">
-            <select>
-                <option>Classificação</option>
-                <option>Mensalidade</option>
-                <option>Contrato</option>
-                <option>Serviço avulso</option>
-            </select>
-        </div>
+        <form method="GET" action="/relatorio-contas-receber">
 
-        <div class="table-header">
-            <h2>Resultado do Relatório</h2>
-        </div>
+            <div class="filters-grid">
+                <input type="date" name="data_inicio" title="Recebimento inicial">
+
+                <input type="date" name="data_fim" title="Recebimento final">
+
+                <select name="classificacao">
+                    <option value="">Classificação</option>
+                    <option value="Mensalidade">Mensalidade</option>
+                    <option value="Contrato">Contrato</option>
+                    <option value="Serviço avulso">Serviço avulso</option>
+                    <option value="Outros">Outros</option>
+                </select>
+            </div>
+
+            <div class="table-header">
+                <h2>Resultado do Relatório</h2>
+
+                <div class="header-actions">
+                    <button type="submit" class="secondary-button">
+                        Buscar
+                    </button>
+                </div>
+            </div>
+
+        </form>
 
         <div class="table-wrapper">
             <table>
@@ -52,12 +65,29 @@
                         <th>Recebimento</th>
                         <th>Pessoa/Empresa</th>
                         <th>Classificação</th>
+                        <th>Status</th>
                         <th>Valor</th>
                     </tr>
                 </thead>
+
                 <tbody>
-                    <tr><td>05/05/2026</td><td>Empresa Saúde Ativa</td><td>Mensalidade</td><td>R$ 2.500,00</td></tr>
-                    <tr><td>10/05/2026</td><td>Vita Corporate</td><td>Contrato</td><td>R$ 3.200,00</td></tr>
+                    {% for conta in contas %}
+                    <tr>
+                        <td>{{ conta['data_recebimento'] or '' }}</td>
+
+                        <td>
+                            {% if conta['nome_fantasia'] %}
+                                {{ conta['nome_fantasia'] }}
+                            {% else %}
+                                {{ conta['nome_professor'] or '' }}
+                            {% endif %}
+                        </td>
+
+                        <td>{{ conta['classificacao'] or '' }}</td>
+                        <td>{{ conta['status'] or '' }}</td>
+                        <td>{{ conta['valor'] or '' }}</td>
+                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>

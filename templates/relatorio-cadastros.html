@@ -30,23 +30,35 @@
 
     <div class="table-card">
 
-        <div class="filters-grid">
-            <select>
-                <option>Empresa/Professor</option>
-                <option>Empresa</option>
-                <option>Professor</option>
-            </select>
-            <select>
-                <option>Ativo/Inativo</option>
-                <option>Ativo</option>
-                <option>Inativo</option>
-            </select>
-            <input type="text" placeholder="Buscar por nome">
-        </div>
+        <form method="GET" action="/relatorio-cadastros">
 
-        <div class="table-header">
-            <h2>Resultado do Relatório</h2>
-        </div>
+            <div class="filters-grid">
+                <select name="tipo">
+                    <option value="">Empresa/Professor</option>
+                    <option value="Empresa">Empresa</option>
+                    <option value="Professor">Professor</option>
+                </select>
+
+                <select name="status">
+                    <option value="">Ativo/Inativo</option>
+                    <option value="Ativo">Ativo</option>
+                    <option value="Inativo">Inativo</option>
+                </select>
+
+                <input type="text" name="busca" placeholder="Buscar por nome ou e-mail">
+            </div>
+
+            <div class="table-header">
+                <h2>Resultado do Relatório</h2>
+
+                <div class="header-actions">
+                    <button type="submit" class="secondary-button">
+                        Buscar
+                    </button>
+                </div>
+            </div>
+
+        </form>
 
         <div class="table-wrapper">
             <table>
@@ -58,9 +70,23 @@
                         <th>E-mail</th>
                     </tr>
                 </thead>
+
                 <tbody>
-                    <tr><td>Empresa Saúde Ativa</td><td>Empresa</td><td>Ativo</td><td>contato@saudeativa.com</td></tr>
-                    <tr><td>João Silva</td><td>Professor</td><td>Ativo</td><td>joao@email.com</td></tr>
+                    {% for cadastro in cadastros %}
+                    <tr>
+                        <td>
+                            {% if cadastro['tipo'] == 'Empresa' %}
+                                {{ cadastro['nome_fantasia'] or cadastro['razao_social'] or '' }}
+                            {% else %}
+                                {{ cadastro['nome_professor'] or '' }}
+                            {% endif %}
+                        </td>
+
+                        <td>{{ cadastro['tipo'] or '' }}</td>
+                        <td>{{ cadastro['status'] or '' }}</td>
+                        <td>{{ cadastro['email'] or '' }}</td>
+                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>

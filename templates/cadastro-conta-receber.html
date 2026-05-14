@@ -28,73 +28,83 @@
         <p>Cadastre uma nova receita vinculada a uma pessoa ou empresa.</p>
     </div>
 
-    <div class="form-card">
+    <form method="POST" action="/cadastro-conta-receber">
 
-        <div class="table-header">
-            <h2>Dados da Conta</h2>
+        <div class="form-card">
+
+            <div class="table-header">
+                <h2>Dados da Conta</h2>
+            </div>
+
+            <div class="form-grid">
+
+                <div>
+                    <label>Data de Recebimento</label>
+                    <input type="date" name="data_recebimento">
+                </div>
+
+                <div>
+                    <label>Valor</label>
+                    <input type="text" name="valor" placeholder="Ex: R$ 2.500,00">
+                </div>
+
+                <div>
+                    <label>Cadastro Vinculado</label>
+                    <select name="cadastro_id">
+                        <option value="">Selecione pessoa/empresa</option>
+
+                        {% for cadastro in cadastros %}
+                        <option value="{{ cadastro['id'] }}">
+                            {% if cadastro['tipo'] == 'Empresa' %}
+                                {{ cadastro['nome_fantasia'] }}
+                            {% else %}
+                                {{ cadastro['nome_professor'] }}
+                            {% endif %}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div>
+                    <label>Classificação</label>
+                    <select name="classificacao">
+                        <option value="">Selecione a classificação</option>
+                        <option value="Mensalidade">Mensalidade</option>
+                        <option value="Contrato">Contrato</option>
+                        <option value="Serviço avulso">Serviço avulso</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Status</label>
+                    <select name="status">
+                        <option value="Pendente">Pendente</option>
+                        <option value="Recebido">Recebido</option>
+                        <option value="Cancelado">Cancelado</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Observações</label>
+                    <textarea name="observacoes" placeholder="Inclua observações sobre este recebimento."></textarea>
+                </div>
+
+            </div>
+
+            <div class="action-buttons">
+                <a href="/contas-receber">
+                    <button type="button" class="secondary-button">Cancelar</button>
+                </a>
+
+                <button type="submit" class="secondary-button">
+                    Salvar Conta
+                </button>
+            </div>
+
         </div>
 
-        <div class="form-grid">
-
-            <div>
-                <label>Data de Recebimento</label>
-                <input type="date">
-            </div>
-
-            <div>
-                <label>Valor</label>
-                <input type="text" placeholder="Ex: R$ 2.500,00">
-            </div>
-
-            <div>
-                <label>Cadastro Vinculado</label>
-                <select>
-                    <option>Selecione pessoa/empresa</option>
-                    <option>Empresa Saúde Ativa</option>
-                    <option>Vita Corporate</option>
-                    <option>Bem Estar Tech</option>
-                    <option>João Silva</option>
-                </select>
-            </div>
-
-            <div>
-                <label>Classificação</label>
-                <select>
-                    <option>Selecione a classificação</option>
-                    <option>Mensalidade</option>
-                    <option>Contrato</option>
-                    <option>Serviço avulso</option>
-                    <option>Outros</option>
-                </select>
-            </div>
-
-            <div>
-                <label>Status</label>
-                <select>
-                    <option>Pendente</option>
-                    <option>Recebido</option>
-                    <option>Cancelado</option>
-                </select>
-            </div>
-
-            <div>
-                <label>Observações</label>
-                <textarea placeholder="Inclua observações sobre este recebimento."></textarea>
-            </div>
-
-        </div>
-
-        <div class="action-buttons">
-            <a href="/contas-receber">
-                <button type="button" class="secondary-button">Cancelar</button>
-            </a>
-
-            <a href="/contas-receber">
-                <button type="button" class="secondary-button">Salvar Conta</button>
-            </a>
-        </div>
-
-    </div>
+    </form>
 
 </div>
 

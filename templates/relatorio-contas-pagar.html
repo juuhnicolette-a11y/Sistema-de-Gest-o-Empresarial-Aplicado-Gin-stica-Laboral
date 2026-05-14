@@ -25,25 +25,39 @@
 
     <div class="topbar">
         <h1>Relatório de Contas a Pagar</h1>
-        <p>Filtre pagamentos por vencimento.</p>
+        <p>Filtre pagamentos por vencimento e classificação.</p>
     </div>
 
     <div class="table-card">
 
-        <div class="filters-grid">
-            <input type="date" title="Vencimento inicial">
-            <input type="date" title="Vencimento final">
-            <select>
-                <option>Classificação</option>
-                <option>Professor</option>
-                <option>Insumos</option>
-                <option>Serviços</option>
-            </select>
-        </div>
+        <form method="GET" action="/relatorio-contas-pagar">
 
-        <div class="table-header">
-            <h2>Resultado do Relatório</h2>
-        </div>
+            <div class="filters-grid">
+                <input type="date" name="data_inicio" title="Vencimento inicial">
+
+                <input type="date" name="data_fim" title="Vencimento final">
+
+                <select name="classificacao">
+                    <option value="">Classificação</option>
+                    <option value="Professor">Professor</option>
+                    <option value="Fornecedor">Fornecedor</option>
+                    <option value="Insumos">Insumos</option>
+                    <option value="Serviços">Serviços</option>
+                    <option value="Outros">Outros</option>
+                </select>
+            </div>
+
+            <div class="table-header">
+                <h2>Resultado do Relatório</h2>
+
+                <div class="header-actions">
+                    <button type="submit" class="secondary-button">
+                        Buscar
+                    </button>
+                </div>
+            </div>
+
+        </form>
 
         <div class="table-wrapper">
             <table>
@@ -52,12 +66,29 @@
                         <th>Vencimento</th>
                         <th>Pessoa/Empresa</th>
                         <th>Classificação</th>
+                        <th>Status</th>
                         <th>Valor</th>
                     </tr>
                 </thead>
+
                 <tbody>
-                    <tr><td>10/05/2026</td><td>João Silva</td><td>Professor</td><td>R$ 1.200,00</td></tr>
-                    <tr><td>15/05/2026</td><td>Fornecedor Fit</td><td>Insumos</td><td>R$ 350,00</td></tr>
+                    {% for conta in contas %}
+                    <tr>
+                        <td>{{ conta['data_vencimento'] or '' }}</td>
+
+                        <td>
+                            {% if conta['nome_fantasia'] %}
+                                {{ conta['nome_fantasia'] }}
+                            {% else %}
+                                {{ conta['nome_professor'] or '' }}
+                            {% endif %}
+                        </td>
+
+                        <td>{{ conta['classificacao'] or '' }}</td>
+                        <td>{{ conta['status'] or '' }}</td>
+                        <td>{{ conta['valor'] or '' }}</td>
+                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>

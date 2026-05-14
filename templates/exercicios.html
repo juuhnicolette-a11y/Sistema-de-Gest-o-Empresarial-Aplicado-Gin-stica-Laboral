@@ -56,42 +56,29 @@
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <td>Alongamento Cervical</td>
-                        <td>10</td>
-                        <td>30 segundos</td>
-                        <td>Para cervicalgia</td>
-                        <td>
-                            <a href="/cadastro-exercicio" class="record-link">
-                                Ver <i class="fa-solid fa-chevron-right"></i>
-                            </a>
-                        </td>
-                    </tr>
 
-                    <tr>
-                        <td>Rotação de Ombros</td>
-                        <td>15</td>
-                        <td>45 segundos</td>
-                        <td>Sem adaptação</td>
-                        <td>
-                            <a href="/cadastro-exercicio" class="record-link">
-                                Ver <i class="fa-solid fa-chevron-right"></i>
-                            </a>
-                        </td>
-                    </tr>
+{% for exercicio in exercicios %}
 
-                    <tr>
-                        <td>Flexão de Punhos</td>
-                        <td>12</td>
-                        <td>30 segundos</td>
-                        <td>Com apoio</td>
-                        <td>
-                            <a href="/cadastro-exercicio" class="record-link">
-                                Ver <i class="fa-solid fa-chevron-right"></i>
-                            </a>
-                        </td>
-                    </tr>
-                </tbody>
+<tr>
+
+    <td>{{ exercicio['nome'] }}</td>
+
+    <td>{{ exercicio['repeticoes'] }}</td>
+
+    <td>{{ exercicio['tempo'] }}</td>
+
+    <td>
+        <a href="/editar-exercicio/{{ exercicio['id'] }}" class="record-link">
+            Ver
+            <i class="fa-solid fa-chevron-right"></i>
+        </a>
+    </td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
             </table>
         </div>
 

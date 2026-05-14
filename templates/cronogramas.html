@@ -55,40 +55,36 @@
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <td>Empresa Saúde Ativa</td>
-                        <td>João Silva</td>
-                        <td>Colchonetes</td>
-                        <td>
-                            <a href="/cadastro-cronograma" class="record-link">
-                                Ver <i class="fa-solid fa-chevron-right"></i>
-                            </a>
-                        </td>
-                    </tr>
 
-                    <tr>
-                        <td>Vita Corporate</td>
-                        <td>Maria Souza</td>
-                        <td>Faixas elásticas</td>
-                        <td>
-                            <a href="/cadastro-cronograma" class="record-link">
-                                Ver <i class="fa-solid fa-chevron-right"></i>
-                            </a>
-                        </td>
-                    </tr>
+{% for cronograma in cronogramas %}
 
-                    <tr>
-                        <td>Bem Estar Tech</td>
-                        <td>João Silva</td>
-                        <td>Halteres leves</td>
-                        <td>
-                            <a href="/cadastro-cronograma" class="record-link">
-                                Ver <i class="fa-solid fa-chevron-right"></i>
-                            </a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+<tr>
+
+    <td>{{ cronograma['empresa'] or '' }}</td>
+
+    <td>{{ cronograma['professor'] or '' }}</td>
+
+    <td>{{ cronograma['insumos'] or '' }}</td>
+
+    <td>
+        <a href="/editar-cronograma/{{ cronograma['id'] }}" class="record-link">
+            Ver
+            <i class="fa-solid fa-chevron-right"></i>
+        </a>
+    </td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+                        </table>
+        </div>
+
+        <div class="pagination">
+            <span class="active-page">1</span>
+            <a href="#">2</a>
+            <a href="#">3</a>
         </div>
 
         <div class="action-buttons">
