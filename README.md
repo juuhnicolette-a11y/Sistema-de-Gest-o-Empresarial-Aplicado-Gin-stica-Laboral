@@ -75,12 +75,7 @@ O projeto foi desenvolvido como uma aplicação web utilizando Python e Flask, i
 ```bash
 VitaLab/
 │
-├── app.py
-├── vitalab.db
-├── README.md
-│
 ├── static/
-│   │
 │   └── style.css
 │
 ├── templates/
@@ -118,12 +113,13 @@ VitaLab/
 │   ├── relatorio-contas-pagar.html
 │   └── relatorio-contas-receber.html
 │
-├── uploads/
-│   │
-│   ├── imagens/
-│   └── videos/
+├── README.md
+├── app.py
+├── requirements.txt
+├── vitalab.db
 │
-└── database/
-    │
-    ├── schema.sql
-    └── seeds.sql
+├── criar_banco.py
+├── inserir_dados.py
+├── criar_tabelas_modulos.py
+├── criar_relacao_cronograma.py
+└── alterar_banco_professor_vinculado.py
