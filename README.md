@@ -75,27 +75,55 @@ O projeto foi desenvolvido como uma aplicação web utilizando Python e Flask, i
 ```bash
 VitaLab/
 │
-├── index.html
-├── dashboard.html
-├── cadastros.html
-├── visualizacao-cadastro.html
-├── editar-cadastro.html
+├── app.py
+├── vitalab.db
+├── README.md
 │
-├── planejamento.html
-├── exercicios.html
-├── cadastro-exercicio.html
-├── cronogramas.html
-├── cadastro-cronograma.html
+├── static/
+│   │
+│   └── style.css
 │
-├── financeiro.html
-├── contas-pagar.html
-├── contas-receber.html
+├── templates/
+│   │
+│   ├── index.html
+│   ├── dashboard.html
+│   │
+│   ├── cadastros.html
+│   ├── novo-cadastro.html
+│   ├── visualizacao-cadastro.html
+│   ├── editar-cadastro.html
+│   │
+│   ├── planejamento.html
+│   ├── exercicios.html
+│   ├── cadastro-exercicio.html
+│   ├── editar-exercicio.html
+│   │
+│   ├── cronogramas.html
+│   ├── cadastro-cronograma.html
+│   ├── editar-cronograma.html
+│   │
+│   ├── financeiro.html
+│   │
+│   ├── contas-pagar.html
+│   ├── cadastro-conta-pagar.html
+│   ├── editar-conta-pagar.html
+│   │
+│   ├── contas-receber.html
+│   ├── cadastro-conta-receber.html
+│   ├── editar-conta-receber.html
+│   │
+│   ├── relatorios.html
+│   ├── relatorio-cadastros.html
+│   ├── relatorio-cronogramas.html
+│   ├── relatorio-contas-pagar.html
+│   └── relatorio-contas-receber.html
 │
-├── relatorios.html
-├── relatorio-cadastros.html
-├── relatorio-cronogramas.html
-├── relatorio-contas-pagar.html
-├── relatorio-contas-receber.html
+├── uploads/
+│   │
+│   ├── imagens/
+│   └── videos/
 │
-├── style.css
-└── README.md
+└── database/
+    │
+    ├── schema.sql
+    └── seeds.sql
