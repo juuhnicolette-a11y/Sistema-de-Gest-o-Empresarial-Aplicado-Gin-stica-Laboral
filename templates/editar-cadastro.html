@@ -241,12 +241,21 @@ function alternarTipoCadastro() {
     const camposEmpresa = document.getElementById("camposEmpresa");
     const camposProfessor = document.getElementById("camposProfessor");
 
+    const inputsEmpresa = camposEmpresa.querySelectorAll("input, select, textarea");
+    const inputsProfessor = camposProfessor.querySelectorAll("input, select, textarea");
+
     if (tipo === "Empresa") {
         camposEmpresa.style.display = "block";
         camposProfessor.style.display = "none";
+
+        inputsEmpresa.forEach(campo => campo.disabled = false);
+        inputsProfessor.forEach(campo => campo.disabled = true);
     } else {
         camposEmpresa.style.display = "none";
         camposProfessor.style.display = "block";
+
+        inputsEmpresa.forEach(campo => campo.disabled = true);
+        inputsProfessor.forEach(campo => campo.disabled = false);
     }
 }
 

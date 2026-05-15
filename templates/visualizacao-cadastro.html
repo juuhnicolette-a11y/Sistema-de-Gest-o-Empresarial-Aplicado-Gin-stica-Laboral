@@ -35,6 +35,17 @@
 
     {% if cadastro['tipo'] == 'Empresa' %}
 
+
+<div style="display: flex; justify-content: flex-end; gap: 12px; margin-bottom: 20px;">
+    <a href="/cadastros">
+        <button class="secondary-button">Voltar</button>
+    </a>
+
+    <a href="/editar-cadastro/{{ cadastro['id'] }}">
+        <button class="secondary-button">Editar Cadastro</button>
+    </a>
+</div>
+
     <div class="form-card">
         <div class="table-header">
             <h2>Empresa Contratante</h2>
@@ -177,15 +188,7 @@
 
     {% endif %}
 
-    <div class="action-buttons">
-        <a href="/cadastros">
-            <button class="secondary-button">Voltar</button>
-        </a>
-
-        <a href="/editar-cadastro/{{ cadastro['id'] }}">
-            <button class="secondary-button">Editar Cadastro</button>
-        </a>
-    </div>
+    
 
 </div>
 
